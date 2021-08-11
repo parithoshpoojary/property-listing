@@ -1,5 +1,5 @@
-### PL - Property Listing
+## PL - Property Listing
 
-PL is a web application that provides a common platform for property buyers & sellers to locate properties of interest in India. 
+PL is an online application that serves as a single platform for property buyers and sellers in India to discover properties of interest.
 
-##### This application is built around using Angular and Spring MVC. 
+##### This web application is based on Angular, RESTful API, MySQL and Spring. 
