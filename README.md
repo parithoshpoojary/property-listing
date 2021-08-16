@@ -1,6 +1,5 @@
-## PL - Property Listing - Resources
+## PL - Property Listing
 
-This repository contains all the resources required for the project to be completed.
-A Team of 6 peeps.
-Vivek, Rithvik, Kiran ----> Angular Part
-Parithosh, Arif, Tejal ----> Spring Part
+PL is an online application that serves as a single platform for property buyers and sellers in India to discover properties of interest.
+
+##### This web application is based on Angular, RESTful API, MySQL and Spring. 
