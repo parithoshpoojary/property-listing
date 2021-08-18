@@ -1,0 +1,73 @@
+<p class="display-4 text-primary mt-2">Sign In</p>
+<hr />
+
+<form (ngSubmit)="signInSubmit(signInForm)" #signInForm="ngForm">
+  <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input
+      type="text"
+      class="form-control"
+      id="username"
+      name="username"
+      [(ngModel)]="user.username"
+      #username="ngModel"
+      placeholder="enter username"
+      required
+    />
+    <p
+      class="small text-danger my-2"
+      *ngIf="username.dirty && username.invalid"
+    >
+      Username can't be empty !
+    </p>
+  </div>
+
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      name="password"
+      [(ngModel)]="user.password"
+      #password="ngModel"
+      placeholder="enter password"
+      required
+    />
+    <p
+      class="small text-danger my-2"
+      *ngIf="password.dirty && password.invalid"
+    >
+      Password can't be empty !
+    </p>
+  </div>
+
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="signInForm.pristine || signInForm.invalid"
+  >
+    Submit
+  </button>
+</form>
+
+<div
+  class="alert alert-success d-flex align-items-center mt-2"
+  role="alert"
+  *ngIf="successFlag"
+>
+  <i class="material-icons">check_circle</i>
+  <div class="ms-2">
+    Login is successfull ! Click
+    <a routerLink="/">here</a> to go to home.
+  </div>
+</div>
+
+<div
+  class="alert alert-danger d-flex align-items-center mt-2"
+  role="alert"
+  *ngIf="errorFlag"
+>
+  <i class="material-icons"> warning </i>
+  <div class="ms-2">Login credentials are invalid</div>
+</div>
