@@ -1,0 +1,66 @@
+<!-- Hero box with filtering form -->
+<div id="hero-box" class="container col-xxl-8 px-4 py-5 mt-4 border rounded bg-dark position-relative"
+    style="height: 400px;">
+    <div class="border rounded position-absolute top-50 left-100">
+        <form class="row row-cols-lg-auto g-3 align-items- p-2">
+            <div class="col-12">
+                <label for="cities">City</label>
+                <div class="input-group">
+                    <select class="form-select" id="cities">
+                        <option value="{{location.id}}" *ngFor="let location of locations, let i = index">{{ location.city }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label for="category">Category</label>
+                <select class="form-select" id="category">
+                    <option value="{{category.id}}" *ngFor="let category of categories, let i = index">{{ category.name }}
+                    </option>
+                </select>
+            </div>
+
+            <div class="col-12">
+                <label for="price">Price</label>
+                <select class="form-select" id="price">
+                    <option value="0" selected> --- </option>
+                    <option value="1"> 5k-10k </option>
+                    <option value="2"> 10k-15k </option>
+                    <option value="3"> 15k-20k </option>
+                    <option value="4"> above 20k </option>
+                </select>
+            </div>
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-secondary mt-3">Search</button>
+            </div>
+        </form>
+    </div>
+</div> <!-- Hero box end -->
+
+<!-- City Property Listings carousel -->
+<div class="container px-4 py-5" id="featured-spaces">
+    <h2 class="pb-2 border-bottom">Featured Spaces</h2>
+
+    <div class="row g-4 py-5">
+        <div class="col-sm-6 col-lg-3" *ngFor="let property of properties">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{property.name}}  <span class="badge bg-secondary">{{ property.listFor}}</span></h5>
+                    <div class="card-text">
+                        <div class="h6">{{property.category.name}}</div>
+                        <div>{{property.address.line1}} {{property.address.line2}}</div>
+                        <div>{{property.address.pincode}}</div>
+                    </div>
+                    <a href="#" class="btn btn-secondary">See Property</a>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="btn btn-secondary float-end">Explore More</a>
+    </div>
+</div>
+<!-- properties carousel end-->
+
