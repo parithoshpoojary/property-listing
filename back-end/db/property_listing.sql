@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 17, 2021 at 11:30 AM
+-- Generation Time: Aug 19, 2021 at 06:42 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -35,6 +35,21 @@ CREATE TABLE `addresses` (
   `pincode` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `addresses`
+--
+
+INSERT INTO `addresses` (`id`, `line_1`, `line_2`, `landmark`, `pincode`) VALUES
+(1, '15th Road', 'Bandra (W)', NULL, 400050),
+(2, 'Turner Road', 'Bandra (W)', NULL, 400050),
+(3, 'Guru Nanak Road', 'Bandra (W)', NULL, 400050),
+(4, 'S.V Road', 'Jogeshwari (W)', NULL, 400075),
+(5, 'Freemason Road', 'Okhla', NULL, 110880),
+(6, '11th Road', 'Neezamuddin Station', NULL, 110090),
+(7, 'Shalimar Baugh', '', NULL, 110040),
+(8, 'Nelosn Mandela Rd', '', NULL, 110089),
+(9, 'Aradhana Apmts', 'Testing rd', NULL, 110089);
+
 -- --------------------------------------------------------
 
 --
@@ -44,7 +59,7 @@ CREATE TABLE `addresses` (
 CREATE TABLE `admins` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `pwd` text NOT NULL,
+  `password` varchar(255) NOT NULL,
   `first_name` varchar(255) DEFAULT NULL,
   `last_name` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -60,6 +75,16 @@ CREATE TABLE `categories` (
   `name` varchar(255) NOT NULL,
   `description` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `description`) VALUES
+(1, '1BHK', NULL),
+(2, '2BHK', NULL),
+(3, '3BHK', NULL),
+(4, 'Villa', NULL);
 
 -- --------------------------------------------------------
 
@@ -86,6 +111,24 @@ CREATE TABLE `locations` (
   `state` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `locations`
+--
+
+INSERT INTO `locations` (`id`, `city`, `state`) VALUES
+(1, 'Mumbai', 'Maharashtra'),
+(2, 'Delhi', 'Delhi'),
+(3, 'Bangalore', 'Karnataka'),
+(4, 'Hyderabad', 'Telangana'),
+(5, 'Chennai', 'Tamil Nadu'),
+(6, 'Kolkata', 'West Bengal'),
+(7, 'Ahmedabad', 'Gujrat'),
+(8, 'Pune', 'Maharashtra'),
+(9, 'Surat', 'Gujrat'),
+(10, 'Jaipur', 'Rajasthan'),
+(11, 'Noida', 'UP'),
+(12, 'Gurgaon', 'Haryana');
+
 -- --------------------------------------------------------
 
 --
@@ -103,6 +146,20 @@ CREATE TABLE `properties` (
   `list_for` enum('buy','rent') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `properties`
+--
+
+INSERT INTO `properties` (`id`, `name`, `description`, `avg_rating`, `address_id`, `location_id`, `category_id`, `list_for`) VALUES
+(1, 'Amuse Apmts', NULL, NULL, 1, 1, 2, 'buy'),
+(2, 'Aradhana', NULL, NULL, 2, 1, 1, 'rent'),
+(3, 'Lake View', NULL, NULL, 3, 1, 2, 'rent'),
+(4, 'A-1 Darbar', NULL, NULL, 4, 1, 2, 'buy'),
+(5, 'Global Hights', NULL, NULL, 5, 2, 2, 'rent'),
+(6, 'Nelson Aptms', NULL, NULL, 6, 2, 2, 'rent'),
+(7, 'Golden Oak', NULL, NULL, 7, 2, 3, 'buy'),
+(8, 'Aradhana Apmts', NULL, NULL, 8, 2, 1, 'rent');
+
 -- --------------------------------------------------------
 
 --
@@ -112,25 +169,24 @@ CREATE TABLE `properties` (
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `pwd` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `first_name` varchar(255) DEFAULT NULL,
   `last_name` varchar(255) DEFAULT NULL,
   `website_review` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `users_properties`
+-- Dumping data for table `users`
 --
 
-CREATE TABLE `users_properties` (
-  `user_id` int(11) NOT NULL,
-  `property_id` int(11) NOT NULL,
-  `list_in` enum('booking','wishlist') NOT NULL,
-  `rating` int(11) DEFAULT NULL,
-  `review` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`, `website_review`) VALUES
+(1, 'arif', 'arif12', 'Mohammed', 'Arif', NULL),
+(2, 'rithvik', 'rithvik123', 'Rithvik', 'B', 'Find Your Dream Home with India\'s No.1 Property Site. Search Now! Choose Your Residential Property from 15 lac+ Property Options on Magicbricks. Property Advice. Maximum Property Options. Price & Trends Info. In-Depth Locality Info.'),
+(3, 'tejal', 'tejal123', 'Tejal', 'Guttal', 'Find Your Dream Home with India\'s No.1 Property Site. Search Now! Choose Your Residential Property from 15 lac+ Property Options on Magicbricks. Property Advice. Maximum Property Options. Price & Trends Info. In-Depth Locality Info.'),
+(4, 'vivek', 'vivek123', 'Vivek', 'L', 'Find Your Dream Home with India\'s No.1 Property Site. Search Now! Choose Your Residential Property from 15 lac+ Property Options on Magicbricks. Property Advice. Maximum Property Options. Price & Trends Info. In-Depth Locality Info.'),
+(5, 'kiran', 'kiran123', 'Kiran', '', 'Find Your Dream Home with India\'s No.1 Property Site. Search Now! Choose Your Residential Property from 15 lac+ Property Options on Magicbricks. Property Advice. Maximum Property Options. Price & Trends Info. In-Depth Locality Info.'),
+(6, 'parithosh', 'parithosh123', 'Parithosh', 'Poojary', 'Find Your Dream Home with India\'s No.1 Property Site. Search Now! Choose Your Residential Property from 15 lac+ Property Options on Magicbricks. Property Advice. Maximum Property Options. Price & Trends Info. In-Depth Locality Info.'),
+(7, 'test', 'test123', 'Test', 'One', NULL);
 
 --
 -- Indexes for dumped tables
@@ -185,13 +241,6 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- Indexes for table `users_properties`
---
-ALTER TABLE `users_properties`
-  ADD UNIQUE KEY `user_id` (`user_id`,`property_id`),
-  ADD KEY `fk_booking_prop` (`property_id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -199,7 +248,7 @@ ALTER TABLE `users_properties`
 -- AUTO_INCREMENT for table `addresses`
 --
 ALTER TABLE `addresses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `admins`
@@ -211,7 +260,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `images`
@@ -223,13 +272,13 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT for table `locations`
 --
 ALTER TABLE `locations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `properties`
 --
 ALTER TABLE `properties`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
@@ -248,13 +297,6 @@ ALTER TABLE `properties`
   ADD CONSTRAINT `fk_property_address` FOREIGN KEY (`address_id`) REFERENCES `addresses` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_property_category` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_property_location` FOREIGN KEY (`location_id`) REFERENCES `locations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `users_properties`
---
-ALTER TABLE `users_properties`
-  ADD CONSTRAINT `fk_booking_prop` FOREIGN KEY (`property_id`) REFERENCES `properties` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_booking_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
