@@ -1,31 +1,8 @@
--- phpMyAdmin SQL Dump
--- version 5.1.0
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Aug 19, 2021 at 06:58 PM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.6
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `property_listing`
---
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `addresses`
---
 
 CREATE TABLE `addresses` (
   `id` int(11) NOT NULL,
@@ -35,15 +12,9 @@ CREATE TABLE `addresses` (
   `pincode` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- RELATIONSHIPS FOR TABLE `addresses`:
---
-
---
 -- Dumping data for table `addresses`
---
 
-INSERT DELAYED IGNORE INTO `addresses` (`id`, `line_1`, `line_2`, `landmark`, `pincode`) VALUES
+INSERT INTO `addresses` (`id`, `line_1`, `line_2`, `landmark`, `pincode`) VALUES
 (1, '15th Road', 'Bandra (W)', NULL, 400050),
 (2, 'Turner Road', 'Bandra (W)', NULL, 400050),
 (3, 'Guru Nanak Road', 'Bandra (W)', NULL, 400050),
@@ -56,7 +27,6 @@ INSERT DELAYED IGNORE INTO `addresses` (`id`, `line_1`, `line_2`, `landmark`, `p
 
 -- --------------------------------------------------------
 
---
 -- Table structure for table `admins`
 --
 
@@ -68,13 +38,8 @@ CREATE TABLE `admins` (
   `last_name` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- RELATIONSHIPS FOR TABLE `admins`:
---
-
 -- --------------------------------------------------------
 
---
 -- Table structure for table `categories`
 --
 
@@ -84,15 +49,10 @@ CREATE TABLE `categories` (
   `description` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- RELATIONSHIPS FOR TABLE `categories`:
---
-
---
 -- Dumping data for table `categories`
 --
 
-INSERT DELAYED IGNORE INTO `categories` (`id`, `name`, `description`) VALUES
+INSERT INTO `categories` (`id`, `name`, `description`) VALUES
 (1, '1BHK', NULL),
 (2, '2BHK', NULL),
 (3, '3BHK', NULL),
@@ -100,7 +60,6 @@ INSERT DELAYED IGNORE INTO `categories` (`id`, `name`, `description`) VALUES
 
 -- --------------------------------------------------------
 
---
 -- Table structure for table `images`
 --
 
@@ -111,15 +70,8 @@ CREATE TABLE `images` (
   `property_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- RELATIONSHIPS FOR TABLE `images`:
---   `property_id`
---       `properties` -> `id`
---
-
 -- --------------------------------------------------------
 
---
 -- Table structure for table `locations`
 --
 
@@ -129,15 +81,10 @@ CREATE TABLE `locations` (
   `state` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- RELATIONSHIPS FOR TABLE `locations`:
---
-
---
 -- Dumping data for table `locations`
 --
 
-INSERT DELAYED IGNORE INTO `locations` (`id`, `city`, `state`) VALUES
+INSERT INTO `locations` (`id`, `city`, `state`) VALUES
 (1, 'Mumbai', 'Maharashtra'),
 (2, 'Delhi', 'Delhi'),
 (3, 'Bangalore', 'Karnataka'),
@@ -153,7 +100,6 @@ INSERT DELAYED IGNORE INTO `locations` (`id`, `city`, `state`) VALUES
 
 -- --------------------------------------------------------
 
---
 -- Table structure for table `properties`
 --
 
@@ -168,21 +114,10 @@ CREATE TABLE `properties` (
   `list_for` enum('buy','rent') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- RELATIONSHIPS FOR TABLE `properties`:
---   `address_id`
---       `addresses` -> `id`
---   `category_id`
---       `categories` -> `id`
---   `location_id`
---       `locations` -> `id`
---
-
---
 -- Dumping data for table `properties`
 --
 
-INSERT DELAYED IGNORE INTO `properties` (`id`, `name`, `description`, `avg_rating`, `address_id`, `location_id`, `category_id`, `list_for`) VALUES
+INSERT INTO `properties` (`id`, `name`, `description`, `avg_rating`, `address_id`, `location_id`, `category_id`, `list_for`) VALUES
 (1, 'Amuse Apmts', NULL, NULL, 1, 1, 2, 'buy'),
 (2, 'Aradhana', NULL, NULL, 2, 1, 1, 'rent'),
 (3, 'Lake View', NULL, NULL, 3, 1, 2, 'rent'),
@@ -194,7 +129,6 @@ INSERT DELAYED IGNORE INTO `properties` (`id`, `name`, `description`, `avg_ratin
 
 -- --------------------------------------------------------
 
---
 -- Table structure for table `users`
 --
 
@@ -207,15 +141,10 @@ CREATE TABLE `users` (
   `website_review` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- RELATIONSHIPS FOR TABLE `users`:
---
-
---
 -- Dumping data for table `users`
 --
 
-INSERT DELAYED IGNORE INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`, `website_review`) VALUES
+INSERT INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`, `website_review`) VALUES
 (1, 'arif', 'arif12', 'Mohammed', 'Arif', NULL),
 (2, 'rithvik', 'rithvik123', 'Rithvik', 'B', 'Find Your Dream Home with India\'s No.1 Property Site. Search Now! Choose Your Residential Property from 15 lac+ Property Options on Magicbricks. Property Advice. Maximum Property Options. Price & Trends Info. In-Depth Locality Info.'),
 (3, 'tejal', 'tejal123', 'Tejal', 'Guttal', 'Find Your Dream Home with India\'s No.1 Property Site. Search Now! Choose Your Residential Property from 15 lac+ Property Options on Magicbricks. Property Advice. Maximum Property Options. Price & Trends Info. In-Depth Locality Info.'),
@@ -224,43 +153,33 @@ INSERT DELAYED IGNORE INTO `users` (`id`, `username`, `password`, `first_name`, 
 (6, 'parithosh', 'parithosh123', 'Parithosh', 'Poojary', 'Find Your Dream Home with India\'s No.1 Property Site. Search Now! Choose Your Residential Property from 15 lac+ Property Options on Magicbricks. Property Advice. Maximum Property Options. Price & Trends Info. In-Depth Locality Info.'),
 (7, 'test', 'test123', 'Test', 'One', NULL);
 
---
--- Indexes for dumped tables
---
-
---
 -- Indexes for table `addresses`
 --
 ALTER TABLE `addresses`
   ADD PRIMARY KEY (`id`);
 
---
 -- Indexes for table `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`);
 
---
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
---
 -- Indexes for table `images`
 --
 ALTER TABLE `images`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `property_id` (`property_id`);
 
---
 -- Indexes for table `locations`
 --
 ALTER TABLE `locations`
   ADD PRIMARY KEY (`id`);
 
---
 -- Indexes for table `properties`
 --
 ALTER TABLE `properties`
@@ -269,72 +188,52 @@ ALTER TABLE `properties`
   ADD KEY `fk_property_location` (`location_id`),
   ADD KEY `fk_property_category` (`category_id`);
 
---
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`);
 
---
--- AUTO_INCREMENT for dumped tables
---
-
---
 -- AUTO_INCREMENT for table `addresses`
 --
 ALTER TABLE `addresses`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
---
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
---
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
---
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
---
 -- AUTO_INCREMENT for table `locations`
 --
 ALTER TABLE `locations`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
---
 -- AUTO_INCREMENT for table `properties`
 --
 ALTER TABLE `properties`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
---
--- Constraints for dumped tables
---
-
---
 -- Constraints for table `images`
 --
 ALTER TABLE `images`
   ADD CONSTRAINT `fk_image_prop` FOREIGN KEY (`property_id`) REFERENCES `properties` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
---
 -- Constraints for table `properties`
 --
 ALTER TABLE `properties`
   ADD CONSTRAINT `fk_property_address` FOREIGN KEY (`address_id`) REFERENCES `addresses` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_property_category` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_property_location` FOREIGN KEY (`location_id`) REFERENCES `locations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+COMMIT;
