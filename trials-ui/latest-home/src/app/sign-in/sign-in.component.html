@@ -1,0 +1,49 @@
+<div class="container col-xl-12 py-5">
+  <div class="row align-items-center g-lg-5 py-5">
+    <div class="col-lg-6 py-3 ">
+      <h2 class="head1">Login to Start Buying your</h2>
+      <h2 class="head2">Dream Home</h2>
+      <img src="../../assets/Login_img.png" class="img-fluid" />
+    </div>
+
+    <div class="col-md-10 mx-auto col-lg-6">
+      <form (ngSubmit)="signInSubmit(signInForm)" #signInForm="ngForm" class="p-4 p-md-5 border rounded-3 bg-light">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label><span class="text-danger"> *</span>
+          <input type="text" class="form-control" id="username" name="username" [(ngModel)]="user.username"
+            #username="ngModel" placeholder="Enter Username" required />
+          <p class="small text-danger my-2" *ngIf="username.dirty && username.invalid">
+            Username can't be empty !
+          </p>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label><span class="text-danger"> *</span>
+          <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password"
+            #password="ngModel" placeholder="Enter Password" required />
+          <p class="small text-danger my-2" *ngIf="password.dirty && password.invalid">
+            Password can't be empty !
+          </p>
+        </div>
+
+        <button type="submit" class="w-100 btn btn-lg btn-secondary"
+          [disabled]="signInForm.pristine || signInForm.invalid">
+          Log In
+        </button>
+      </form>
+
+      <div class="alert alert-success d-flex align-items-center mt-2" role="alert" *ngIf="successFlag">
+        <i class="material-icons">check_circle</i>
+        <div class="ms-2">
+          Login is successfull ! Click
+          <a routerLink="/">here</a> to go to home.
+        </div>
+      </div>
+
+      <div class="alert alert-danger d-flex align-items-center mt-2" role="alert" *ngIf="errorFlag">
+        <i class="material-icons"> warning </i>
+        <div class="ms-2">Login credentials are invalid</div>
+      </div>
+    </div>
+  </div>
+</div>
