@@ -1,0 +1,123 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-6 py-3">
+      <h2 class="head1">Signup to Start Buying your</h2>
+      <h2 class="head2">Dream Home</h2>
+      <img src="../../assets/signup.png" width="600px" height="400px" />
+    </div>
+
+    <div class="col-6">
+      <p class="display-4 text-dark mt-2">Sign Up</p>
+      <hr />
+
+      <form (ngSubmit)="signUpSubmit(signUpForm)" #signUpForm="ngForm">
+        <div class="mb-3">
+          <label for="first-name" class="form-label">First Name</label
+          ><span class="text-danger"> *</span>
+          <input
+            type="text"
+            class="form-control"
+            id="first-name"
+            name="firstName"
+            [(ngModel)]="user.firstName"
+            #firstName="ngModel"
+            placeholder="Enter First Name"
+            required
+          />
+          <p
+            class="small text-danger my-2"
+            *ngIf="firstName.dirty && firstName.invalid"
+          >
+            First Name can't be empty !
+          </p>
+        </div>
+
+        <div class="mb-3">
+          <label for="last-name" class="form-label">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="last-name"
+            name="lastName"
+            [(ngModel)]="user.lastName"
+            #lastName="ngModel"
+            placeholder="Enter Last Name"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label
+          ><span class="text-danger"> *</span>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            name="username"
+            [(ngModel)]="user.username"
+            #username="ngModel"
+            placeholder="Enter Username"
+            required
+          />
+          <p
+            class="small text-danger my-2"
+            *ngIf="username.dirty && username.invalid"
+          >
+            Username can't be empty !
+          </p>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label
+          ><span class="text-danger"> *</span>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            [(ngModel)]="user.password"
+            #password="ngModel"
+            placeholder="Enter password"
+            required
+          />
+          <p
+            class="small text-danger my-2"
+            *ngIf="password.dirty && password.invalid"
+          >
+            Password can't be empty !
+          </p>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="signUpForm.pristine || signUpForm.invalid"
+        >
+          Submit
+        </button>
+      </form>
+
+      <div
+        class="alert alert-success d-flex align-items-center mt-2"
+        role="alert"
+        *ngIf="successFlag"
+      >
+        <i class="material-icons">check_circle</i>
+        <div class="ms-2">
+          New user created successfully ! Click
+          <a routerLink="/signin">here</a> to login.
+        </div>
+      </div>
+
+      <div
+        class="alert alert-danger d-flex align-items-center mt-2"
+        role="alert"
+        *ngIf="errorFlag"
+      >
+        <i class="material-icons"> warning </i>
+        <div class="ms-2">
+          There was an unexpected error. We couldn't complete your request.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
