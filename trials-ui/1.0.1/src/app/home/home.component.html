@@ -1,0 +1,110 @@
+<!-- Hero box with filtering form -->
+<div class="container px-4 py-5">
+    <div id="hero-box" class="col-xxl-8 px-4 py-5 mt-4 border rounded bg-dark position-relative" style="height: 400px;">
+        <div class="position-absolute top-50 left-100">
+
+            <div>
+                <input type="checkbox" class="btn-check" name="listFor" id="buy" form="filter-form" autocomplete="off"
+                    checked>
+                <label class="btn btn-light btn-outline-secondary py-3 px-4" for="buy">Buy</label>
+                <input type="checkbox" class="btn-check" name="listFor" id="rent" form="filter-form" autocomplete="off">
+                <label class="btn btn-light btn-outline-secondary py-3 px-4" for="rent">Rent</label>
+            </div>
+
+            <form id="filter-form" class="row row-cols-lg-auto bg-light border rounded p-2">
+                <div class="col-12">
+                    <!-- <label for="cities">City</label> -->
+                    <div class="input-group">
+                        <select class="form-select" id="cities">
+                            <option value="{{location.id}}" *ngFor="let location of locations, let i = index">{{
+                                location.city }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <!-- <label for="category">Category</label> -->
+                    <select class="form-select" id="category">
+                        <option value="{{category.id}}" *ngFor="let category of categories, let i = index">{{
+                            category.name
+                            }}
+                        </option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <!-- <label for="price">Price</label> -->
+                    <select class="form-select" id="price">
+                        <option value="0" selected>Price Range</option>
+                        <option value="1"> 5k-10k </option>
+                        <option value="2"> 10k-15k </option>
+                        <option value="3"> 15k-20k </option>
+                        <option value="4"> above 20k </option>
+                    </select>
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-secondary material-icons">search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> <!-- Hero box end -->
+
+<!-- City Property Listings carousel -->
+<div class="container px-4 py-5" id="featured-spaces">
+    <h2 class="pb-2">Featured Spaces</h2>
+
+    <div class="row g-4 py-5 position-relative">
+        <div class="col-sm-6 col-lg-3" *ngFor="let property of properties">
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{property.name}} <span class="badge bg-secondary">{{
+                            property.listFor}}</span></h5>
+                    <div class="card-text">
+                        <div class="h6">{{property.category.name}}</div>
+                        <div>{{property.address.line1}} {{property.address.line2}}</div>
+                        <div>{{property.address.pincode}}</div>
+                    </div>
+                    <a routerLink="/property" class="btn btn-secondary">See Property</a>
+                </div>
+            </div>
+        </div>
+
+        <a routerLink="/listings" class="btn btn-secondary col-sm-6 col-lg-3 position-absolute bottom-0 end-0">Explore
+            More</a>
+    </div>
+</div>
+<!-- properties carousel end-->
+
+<!-- About Us -->
+<div class="container px-4 py-5">
+    <h2 style="margin: auto;">About Us</h2>
+
+</div>
+<!-- About Us End -->
+
+<!-- Our Services -->
+<div class="container px-4 py-5">
+    <h2 style="margin: auto;">Our Services</h2>
+
+</div>
+<!-- Our Services End -->
+
+<!-- Reviews -->
+<div class="container px-4 py-5" id="featured-spaces">
+    <h2 class="pb-2">Customer Reviews</h2>
+
+    <div class="row g-4 py-5">
+        <div class="col-lg-4" *ngFor="let review of reviews">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{review[1]}} {{review[2]}}</h5>
+                    <hr>
+                    <p class="card-text">{{review[0]}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Reviews End -->
