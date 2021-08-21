@@ -1,18 +1,18 @@
-.box1 {
+#hero-box {
   background-color: #e0ebed;
   border-radius: 20px;
 }
 
-.h1 {
+.heading-big {
   color: #016450;
   letter-spacing: 5px;
-  font-size: 45px;
+  font-size: 2rem;
   font-family: "Segoe UI";
   font-weight: 700;
   src: local("Segoe UI Bold");
-  line-height: 3rem;
+  line-height: 2rem;
 }
-.h2 {
+.cont-med {
   color: #999999;
   letter-spacing: 1px;
   font-family: "Segoe UI";
@@ -20,7 +20,7 @@
   src: local("Segoe UI SemiBold");
   font-size: medium;
   text-align: justify;
-  line-height: 25px;
+  line-height: 1.5rem;
 }
 .hero {
   width: 100%;
