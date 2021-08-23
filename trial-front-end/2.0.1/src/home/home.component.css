@@ -1,0 +1,208 @@
+/* Hero Box Start */
+#hero-box {
+  background-color: #e0ebed;
+  border-radius: 20px;
+}
+
+.heading-big {
+  color: #016450;
+  letter-spacing: 5px;
+  font-size: 2.8rem;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  line-height: 3rem;
+}
+
+.cont-med {
+  color: #999999;
+  letter-spacing: 1px;
+  font-family: "Segoe UI";
+  font-weight: 600;
+  src: local("Segoe UI SemiBold");
+  font-size: medium;
+  text-align: justify;
+  line-height: 1.5rem;
+}
+
+.content-small {
+  font-family: "Segoe UI";
+  font-weight: 600;
+  src: local("Segoe UI SemiBold");
+  letter-spacing: 1.5px;
+  font-size: 14px;
+}
+
+.cont-name {
+  color: #016450;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 1.5px;
+  font-size: 14px;
+}
+
+#hero-img {
+  max-width: 100%;
+  margin-bottom: -25px;
+}
+#dots-img {
+  width: 70px;
+  height: 70px;
+  margin-top: 50px;
+}
+
+#filter-form {
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+
+#search-btn {
+  background-color: #016450;
+  color: #ffffff;
+}
+
+.h2des {
+  letter-spacing: 7px;
+  font-size: 16px;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  color: #016450;
+}
+
+/* Feature Houses - styling */
+.fsdes {
+  letter-spacing: 5px;
+  font-size: 45px;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  color: rgba(153, 153, 153, 0.4);
+}
+
+.des0 {
+  margin-top: 70px;
+  color: #016450;
+  letter-spacing: 5px;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  font-size: 24px;
+}
+
+.label-style {
+  border-radius: 7px;
+  font-family: "Segoe UI";
+  font-weight: 600;
+  src: local("Segoe UI SemiBold");
+  letter-spacing: 1.5px;
+}
+
+@media (min-width: 992px) {
+  #dots-img {
+    width: 100px;
+    height: 100px;
+  }
+  #form-container {
+    position: absolute;
+    top: 77%;
+    left: 5%;
+  }
+}
+
+@media (max-width: 991px) {
+  #hero-box {
+    background-image: url("../../assets/heroimg.png");
+  }
+}
+/* Hero Box End */
+
+/* Dashboard starts */
+#dashboard {
+  background-color: rgba(1, 100, 80, 0.1);
+  margin: 150px -17vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+/* Button color and animation */
+.btnexp {
+  font-family: "Segoe UI";
+  font-weight: 600;
+  src: local("Segoe UI SemiBold");
+  background-color: #016450;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  border-radius: 4px;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+  padding: 8px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.btnexp span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btnexp span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btnexp:hover span {
+  padding-right: 25px;
+}
+
+.btnexp:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.btn-green {
+  background-color: #016450;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 1.5px;
+  color: #ffffff;
+}
+/* Dashboard end */
+
+.heading-med {
+  letter-spacing: 5px;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+}
+
+.heading-small {
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 1.5px;
+  font-size: 18px;
+}
+
+#review-card {
+  max-height: 200px;
+  overflow: hidden;
+}
+
+#review-card:hover {
+  transform: scale(1.1, 1.1);
+  z-index: 3;
+  cursor: default;
+}

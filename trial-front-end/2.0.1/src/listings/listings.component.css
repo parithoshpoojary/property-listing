@@ -1,0 +1,54 @@
+.cardmargin {
+  margin-top: 20vh;
+  margin-bottom: 10vh;
+}
+.blcolor {
+  background-color: #016450;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 1.5px;
+  color: #ffffff;
+}
+.bscolor {
+  background-color: #ffffff;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 1.5px;
+  color: #016450;
+}
+.featuredes {
+  font-size: 14px;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 2px;
+  color: #999999;
+}
+.titledes {
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 1.5px;
+  font-size: 38px;
+}
+.aminities {
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 2px;
+  color: #999999;
+}
+
+.carddes1 {
+  border-radius: 15px;
+  /* box-shadow: 20vw 5vw rgba(1, 100, 80, 0.09); */
+}
+.cardAminity {
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 1.5px;
+  font-size: 28px;
+}

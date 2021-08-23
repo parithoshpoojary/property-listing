@@ -1,0 +1,95 @@
+.blcolor {
+  background-color: #016450;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 1.5px;
+  color: #ffffff;
+}
+
+.bscolor {
+  background-color: #ffffff;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 1.5px;
+  color: #016450;
+}
+
+.des0 {
+  margin-top: 150px;
+  color: #016450;
+  letter-spacing: 5px;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  font-size: 24px;
+}
+
+.featuredes {
+  font-size: 14px;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 2px;
+  color: #999999;
+}
+
+.titledes {
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 1.5px;
+  font-size: 38px;
+}
+
+.aminities {
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 2px;
+  color: #999999;
+}
+
+.cont-med {
+  color: #999999;
+  letter-spacing: 1px;
+  font-family: "Segoe UI";
+  font-weight: 600;
+  src: local("Segoe UI SemiBold");
+  font-size: medium;
+  text-align: justify;
+  line-height: 1.5rem;
+}
+
+.cont-name {
+  color: #016450;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 1.5px;
+  font-size: 14px;
+}
+
+#review-card {
+  max-height: 200px;
+  overflow: hidden;
+}
+
+#review-card:hover {
+  transform: scale(1.1, 1.1);
+  z-index: 3;
+  cursor: default;
+}
+
+.review-des {
+  background-color: rgba(153, 153, 153, 0.2);
+  border-radius: 15px;
+}
+::placeholder {
+  letter-spacing: 2px;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  color: rgba(1, 100, 80, 0.2);
+}

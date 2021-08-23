@@ -1,0 +1,33 @@
+/*  */
+.link-style {
+  text-decoration: none;
+  color: #999999;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.btn-green {
+  background-color: #016450;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 1.5px;
+  color: #ffffff;
+}
+
+.btn-white {
+  background-color: #ffffff;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 1.5px;
+  color: #016450;
+}
+
+@media (min-width: 768px) {
+  .nav-pad {
+    padding-left: 7vw;
+    padding-right: 7vw;
+    padding-top: 35px;
+  }
+}

@@ -1,0 +1,250 @@
+<!-- Hero box with filtering form -->
+<div class="container-fluid position-relative my-5">
+    <div id="hero-box" class="row">
+        <div class="col-lg-6 ps-5">
+            <h1 class="heading-big mt-5">
+                Find Your Perfect<br />
+                Future Home
+            </h1>
+            <p class="cont-med cont-med mt-4">PL can help you find a home of the, apartment
+                for rent, sell and buy that you'll love. As with any new technology, building designers experiment and
+                learn from each other in the pursuit of new solutions, can help you easily find a home, apartment for
+                rent, sell and buy that you'll love.
+            </p>
+        </div>
+        <div id="hero-img" class="col-lg-6">
+            <img src="../../assets/heroimg.png" class="img-fluid d-none d-lg-block" />
+        </div>
+        <div class="d-none d-md-block">
+            <img src="../../assets/BoxDesign.png" id="dots-img" class="img-fluid position-absolute top-0 end-0 me-4" />
+        </div>
+    </div>
+
+    <!-- Listings Filtering form -->
+    <div id="form-container" class="row my-3 my-lg-0">
+        <div class="btn-group col-12 col-md-4 mb-2">
+            <input type="radio" class="btn-check" name="listFor" id="buy" autocomplete="off" checked />
+            <label class="btn btn-success p-3 text-center label-style" for="buy"><span class="me-2"> <img
+                        src="../../assets/target.png" class="img-fluid" alt="Buy Logo">
+                </span>BUY</label>
+
+            <input type="radio" class="btn-check" name="listFor" id="rent" autocomplete="off" />
+            <label class="btn btn-success p-3 text-center label-style" for="rent"><span class="me-2"> <img
+                        src="https://img.icons8.com/fluency-systems-filled/48/ffffff/sell-property.png"
+                        class="img-fluid" style="height: 25px; width: 25px;" /></span>RENT</label>
+        </div>
+        <div class="w-100 d-md-none d-lg-block"></div>
+        <div class="col-12 col-md-8 col-lg-10">
+            <form id="filter-form" class="row px-lg-0 border-0 py-2 shadow">
+                <div class="col-12 col-sm-4">
+                    <div class="input-group">
+                        <select class="form-select border-0 py-4 px-3 label-style" id="cities">
+                            <option value="{{ location.id }}" *ngFor="let location of locations; let i = index">
+                                {{ location.city }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-3">
+                    <div class="input-group">
+                        <select class="form-select border-0 py-4 label-style" id="category">
+                            <option value="{{ category.id }}" *ngFor="let category of categories; let i = index">
+                                {{ category.name }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-3">
+                    <div class="input-group">
+                        <select class="form-select border-0 py-4 label-style" id="price">
+                            <option value="0" selected>Sort By</option>
+                            <option value="1">Newest to Old</option>
+                            <option value="2">Old to Newest</option>
+                            <option value="3">High Popularity</option>
+                            <option value="4">High Price Range</option>
+                            <option value="4">Low Price Range</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-2 mx-auto">
+                    <button type="submit" name="search" id="search-btn"
+                        class="btn material-icons shadow-lg py-3 px-3 mt-2 d-none d-sm-block">
+                        search
+                    </button>
+                    <button type="submit" name="search" id="search-btn"
+                        class="btn shadow-lg py-3 px-3 my-2 w-100 d-block d-sm-none">
+                        search
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Hero box end -->
+
+<!-- Home page Properties Dashboard -->
+<div id="dashboard" class="py-4">
+    <div class="container pb-5">
+        <div class="row justify-content-between my-4">
+            <div class="col-12 col-md-6">
+                <h2 class="fsdes inline-block mb-5">FEATURED SPACE</h2>
+            </div>
+            <div class="d-none d-md-block col-md-4 col-lg-3">
+                <a routerLink="/listings" class="btn btnexp color shadow-lg mx-auto p-3"><span>Explore More</span></a>
+            </div>
+        </div>
+        <div class="row g-3 justify-content-around">
+            <div class="col-md-6 col-xl-3 d-flex justify-content-around"
+                *ngFor="let property of properties, let i = index">
+                <div class="card border-0 shadow position-relative" style="max-width: 25rem; border-radius: 15px;">
+                    <img src="../../assets/photoBuilding.png" class="card-img-top p-2" alt="buildings" />
+                    <div class="card-body">
+                        <h5 class="card-title heading-small">
+                            {{ property.name }}
+                            <span class="badge bg-secondary text-uppercase position-absolute end-0 me-3">{{
+                                property.listFor }}</span>
+                        </h5>
+                        <div class="card-text">
+                            <div class="heading-small">{{ property.category.name }}</div>
+                            <div class="content-small mt-3"><span><img src="../../assets/Rounded.png" alt="arrow"
+                                        class="img-fluid me-2" style="height: 20px;" /></span>{{ property.address.line1
+                                }} {{ property.address.line2 }}</div>
+                            <div class="content-small mt-1" style="margin-left: 30px;">{{ property.address.pincode }}
+                            </div>
+                        </div>
+                        <a routerLink="/property" class="btn btn-green mt-4">EXPLORE PROPERTY</a>
+                    </div>
+                    <span *ngIf="i==2" class="position-absolute top-0 end-0 badge rounded bg-warning p-3 m-2">
+                        New
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="d-md-none col-md-4 col-lg-3 align-self-end mt-4">
+                <a routerLink="/listings" class="btn btn-green shadow-lg mx-auto">Explore More Properties<span><img
+                            src="../../assets/rightarrow.png" alt="arrow" class="img-fluid ms-2"
+                            style="height: 20px;"></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Properties dashboard end -->
+
+<!-- About Us -->
+<div class="container my-5 py-4">
+    <div class="row">
+        <div class="col-6 d-lg-none">
+            <img src="../../assets/newimglisting/aboutus.png" alt="aboutus" class="img-fluid">
+        </div>
+        <div class="col-6">
+            <img src="../../assets/AboutUs.png" alt="aboutus" class="img-fluid">
+        </div>
+        <div class="col-12 col-lg-6 align-self-center">
+            <h2 class="h2des d-none d-lg-block">ABOUT US</h2>
+            <h2 class="heading-med mt-5">Helping People to <br /> Find their Home</h2>
+            <p class="mt-3 cont-med">PL can help you find a home of the,
+                apartment for rent, sell and buy that you'll love. As with any new technology, building designers
+                experiment and Learn from each other in the pursuit of new solutions, can help you easily find a home,
+                apartment for rent, sell and buy that you'll love. </p>
+            <button class="btnexp color px-5 py-3 lsp mt-5 shadow-lg"><span><a href="#"
+                        style="text-decoration: none; color: #ffffff;">EXPLORE</a></span></button>
+        </div>
+    </div>
+</div>
+<!-- About Us End -->
+
+<!-- Our Services -->
+<div class="container my-5 py-5">
+    <h2 class="des0 text-center mb-5">OUR SERVICES</h2>
+    <!-- Buy service -->
+    <div class="row mt-5 py-5">
+        <div class="col-6">
+            <img src="../../assets/BuyHouses.png" alt="aboutus" class="img-fluid">
+        </div>
+        <div class="col-6 d-lg-none">
+            <img src="../../assets/rentcomponent.png" alt="aboutus" class="img-fluid">
+        </div>
+        <div class="col-12 col-lg-6 align-self-center">
+            <h2 class="h2des mt-5">BUY HOUSE</h2>
+            <h2 class="heading-med mt-5">Buying your Dream <br class="d-none d-lg-block" />House is made easier.</h2>
+            <p class="mt-3 cont-med">PL can help you find a home of the, apartment
+                for rent, sell and buy that you'll love. As with any new technology, building designers experiment and
+                learn
+                from each other in the pursuit of new solutions, can help you easily find a home, apartment
+                for rent, sell and buy that you'll love.</p>
+            <button class="btnexp color px-5 py-3 lsp mt-5 shadow-lg"><span><a href="#"
+                        style="text-decoration: none; color: #ffffff;">EXPLORE</a></span></button>
+        </div>
+    </div>
+    <!-- Rent Service -->
+    <div class="row mt-5 py-5">
+        <div class="col-6 d-lg-none">
+            <img src="../../assets/rentcomponent.png" alt="aboutus" class="img-fluid">
+        </div>
+        <div class="col-6 order-lg-2">
+            <img src="../../assets/RentHouse.png" alt="aboutus" class="img-fluid">
+        </div>
+        <div class="col-12 col-lg-6 align-self-center order-lg-1">
+            <h2 class="h2des mt-5">RENT HOUSE</h2>
+            <h2 class="heading-med mt-5">Renting your Dream <br class="d-none d-lg-block" />Home is made easier.</h2>
+            <p class="mt-3 cont-med">PL can help you find a home of the, apartment
+                for rent, sell and buy that you'll love. As with any new technology, building designers experiment and
+                learn From each other in the pursuit of new solutions, can help you easily find a home, apartment
+                for rent, sell and buy that you'll love.</p>
+            <button class="btnexp color px-5 py-3 lsp mt-5 shadow-lg"><span><a href="#"
+                        style="text-decoration: none; color: #ffffff;">EXPLORE</a></span></button>
+        </div>
+    </div>
+</div>
+<!-- Our Services End -->
+
+<!-- Reviews -->
+<div class="container mb-5">
+    <h2 class="des0 text-center mb-5">REVIEWS</h2>
+    <div class="row g-3 justify-content-around">
+        <div class="col-md-4" *ngFor="let review of reviews">
+            <div id="review-card" class="card border-0 mb-5 shadow-lg">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <img src="../../assets/man.png" class="img-fluid h-100 p-2 rounded-start" alt="...">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <img src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/Resources%20-%20Main/Images/stars.png"
+                                alt="stars" class="w-75 mb-3">
+                            <!-- <h5 class="card-title">(Rating*)</h5> -->
+                            <p class="card-text cont-med">{{review[0].slice(0,72)}}</p>
+                            <p class="card-text cont-name"><small>{{review[1]}} {{review[2]}}</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-5 row g-3 justify-content-around">
+        <div class="col-md-4" *ngFor="let review of reviews">
+            <div id="review-card" class="card border-0 mb-5 shadow-lg">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <img src="../../assets/man.png" class="img-fluid h-100 p-2 rounded-start" alt="...">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <img src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/Resources%20-%20Main/Images/stars.png"
+                                alt="stars" class="w-75 mb-3">
+                            <!-- <h5 class="card-title">(Rating*)</h5> -->
+                            <p class="card-text cont-med">{{review[0].slice(0,72)}}</p>
+                            <p class="card-text cont-name"><small>{{review[1]}} {{review[2]}}</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Reviews End -->

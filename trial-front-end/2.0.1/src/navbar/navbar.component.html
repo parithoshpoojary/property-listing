@@ -1,0 +1,48 @@
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light mt-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" routerLink=""><img src="../../assets/Logo.png" class="img-fluid w-75" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- <li class="nav-item ps-5 pe-4 h2">
+                <form (change)="changeDashboard(locationForm)" #locationForm="ngForm">
+                    <select name="location" class="form-select p-0">
+                        <option [value]="location.id" *ngFor="let location of locations">{{ location.city }}
+                        </option>
+                    </select>
+                </form>
+            </li> -->
+                    <li class="nav-item px-4">
+                        <a class="nav-link link-style" aria-current="page" routerLink="#">BUY</a>
+                    </li>
+                    <hr>
+                    <li class="nav-item px-4">
+                        <a class="nav-link link-style" aria-current="page" routerLink="#">RENT</a>
+                    </li>
+                    <hr>
+                </ul>
+
+                <ul class="navbar-nav" *ngIf="auth.currentUser.userId==0">
+                    <button type="button" class="btn btn-white mx-5 mx-lg-3 my-2 my-lg-0 px-3 shadow-lg"
+                        aria-current="page" routerLink="/signup">SIGNUP</button>
+                    <button type="button" class="btn btn-green mx-5 mx-lg-3 my-2 my-lg-0 px-3 shadow-lg"
+                        aria-current="page" routerLink="/signin">LOGIN</button>
+                </ul>
+
+                <ul class="navbar-nav" *ngIf="auth.currentUser.userId!=0">
+                    <button type="button" class="btn btn-green mx-5 mx-lg-3 my-2 my-lg-0 px-3 shadow-lg"
+                        aria-current="page" routerLink="/wishlist">WISHLIST</button>
+                    <button type="button" class="btn btn-green mx-5 mx-lg-3 my-2 my-lg-0 px-3 shadow-lg"
+                        aria-current="page" routerLink="/bookings">BOOKINGS</button>
+                    <button type="button" class="btn btn-white mx-5 mx-lg-3 my-2 my-lg-0 px-3 shadow-lg"
+                        aria-current="page" (click)="auth.signOut()" routerLink="">LOGOUT</button>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
