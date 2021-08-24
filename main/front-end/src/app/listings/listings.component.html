@@ -1,0 +1,213 @@
+<div id="form-container" class="row my-3 my-lg-0">
+    <div class="col-12 col-md-8 col-lg-10">
+        <!-- {{locationService.locations[1].city}} -->
+        <form id="filter-form" class="row px-lg-0 border-0 py-2 shadow">
+            <div class="col-12 col-sm-4">
+                <div class="input-group">
+                    <select class="form-select border-0 py-4 px-3 label-style" id="cities">
+                        <option value="" selected disabled>Location</option>
+                        <option value="{{ location.id }}" *ngFor="let location of locationService.locations; let i = index">
+                            {{ location.city }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 col-sm-3">
+                <div class="input-group">
+                    <select class="form-select border-0 py-4 label-style" id="category">
+                        <option value="" selected disabled>Category</option>
+                        <option value="{{ category.id }}" *ngFor="let category of categoryService.categories; let i = index">
+                            {{ category.name }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 col-sm-3">
+                <div class="input-group">
+                    <select class="form-select border-0 py-4 label-style" id="price">
+                        <option value="" selected disabled>Short By</option>
+                        <option value="1">Latest</option>
+                        <option value="2">Price Low to High</option>
+                        <option value="3">Price High to Low</option>
+                        <option value="4">Ratings</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-2 mx-auto">
+                <button type="submit" name="search" id="search-btn"
+                    class="btn material-icons shadow-lg py-3 px-3 mt-2 d-none d-sm-block">
+                    search
+                </button>
+                <button type="submit" name="search" id="search-btn"
+                    class="btn shadow-lg py-3 px-3 my-2 w-100 d-block d-sm-none">
+                    search
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- HeroBox (Featured properties) Start -->
+<!-- <div id="feat-box" class="container mt-5">
+    <div class="row g-3 justify-content-start">
+        <div class="col-8 col-md-6 col-lg-5">
+            <p class="heading-big pt-3 px-5">FEATURED</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div id="carouselExampleInterval" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3000">
+                    </div>
+                    <div class="carousel-item active" data-bs-interval="3000">
+                    </div>
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- Cards -->
+<!-- <div class="container">
+    <div class="row g-5 justify-content-around">
+        <div class="col-12 col-md-6">
+            <div class="card border-0 shadow-lg" style="border-radius: 15px;">
+                <img src="../../assets/producthome.png" class="card-img-top px-2 pt-2" alt="buildingimg" />
+                <div class="card-body d-flex justify-content-between">
+                    <div class="px-2 pt-1">
+                        <h5 class="cardAminity">Palladium Homes</h5>
+                        <h6 class="mt-3 featuredes" style="font-size: 14px;"><span><img src="../../assets/Rounded.png"
+                                    alt="arrow" class="img-fluid me-2"
+                                    style="height: 20px;"></span>Bandra,West,Mumbai-36</h6>
+                        <h4 class="pt-3 pb-4 cardAminity">Rs. 1,00,000/-</h4>
+                        <button type="button" class="btn blcolor my-3 me-3 px-4 py-3 shadow-lg" aria-current="page">
+                            BUY NOW
+                            <span><img src="../../assets/rightarrow.png" alt="arrow" class="img-fluid ms-5"
+                                    style="height: 20px" /></span>
+                        </button>
+                    </div>
+                    <div class="ms-3 me-4">
+                        <h5 class="mb-4 mt-3 aminities" style="font-size: 14px;">
+                            <span class="px-3">
+                                <img src="../../assets/newimglisting/Icon awesome-shower.png" alt="arrow"
+                                    class="img-fluid" style="height: 15px" /></span>Finished Baths
+                        </h5>
+                        <h5 class="mb-4 mt-3 aminities" style="font-size: 14px;">
+                            <span class="px-3">
+                                <img src="../../assets/newimglisting/Icon ionic-ios-bed.png" alt="arrow"
+                                    class="img-fluid" style="height: 15px" /></span>Spacious Bedrooms
+                        </h5>
+                        <h5 class="mb-4 mt-3 aminities" style="font-size: 14px;">
+                            <span class="px-3">
+                                <img src="../../assets/newimglisting/Icon ionic-md-tv.png" alt="arrow" class="img-fluid"
+                                    style="height: 15px" /></span>Luxuries Livings
+                        </h5>
+                        <img class="mt-5 ms-4 pt-5 w-75"
+                            src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/Resources%20-%20Main/Images/stars.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+<!-- 2 Cards -->
+<!-- <div class="container cardmargin">
+    <div class="row g-5 justify-content-around">
+        <div class="col-6">
+            <div class="card border-0 shadow-lg" style="border-radius: 15px;">
+                <img src="../../assets/newimglisting/photo-building.png" class="card-img-top px-2 pt-2"
+                    alt="buildingimg" />
+                <div class="card-body d-flex justify-content-between">
+                    <div class="px-2 pt-1">
+                        <h5 class="cardAminity">Palladium Homes</h5>
+                        <h6 class="mt-3 featuredes" style="font-size: 14px;"><span><img src="../../assets/Rounded.png"
+                                    alt="arrow" class="img-fluid me-2"
+                                    style="height: 20px;"></span>Bandra,West,Mumbai-36</h6>
+                        <h4 class="pt-3 pb-4 cardAminity">Rs. 1,00,000/-</h4>
+                        <button type="button" class="btn blcolor my-3 me-3 px-4 py-3 shadow-lg" aria-current="page">
+                            BUY NOW
+                            <span><img src="../../assets/rightarrow.png" alt="arrow" class="img-fluid ms-5"
+                                    style="height: 20px" /></span>
+                        </button>
+                    </div>
+                    <div class="ms-3 me-4">
+                        <h5 class="mb-4 mt-3 aminities" style="font-size: 14px;">
+                            <span class="px-3">
+                                <img src="../../assets/newimglisting/Icon awesome-shower.png" alt="arrow"
+                                    class="img-fluid" style="height: 15px" /></span>Finished Baths
+                        </h5>
+                        <h5 class="mb-4 mt-3 aminities" style="font-size: 14px;">
+                            <span class="px-3">
+                                <img src="../../assets/newimglisting/Icon ionic-ios-bed.png" alt="arrow"
+                                    class="img-fluid" style="height: 15px" /></span>Spacious Bedrooms
+                        </h5>
+                        <h5 class="mb-4 mt-3 aminities" style="font-size: 14px;">
+                            <span class="px-3">
+                                <img src="../../assets/newimglisting/Icon ionic-md-tv.png" alt="arrow" class="img-fluid"
+                                    style="height: 15px" /></span>Luxuries Livings
+                        </h5>
+                        <img class="mt-5 ms-4 pt-5 w-75"
+                            src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/Resources%20-%20Main/Images/stars.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card border-0 shadow-lg" style="border-radius: 15px;">
+                <img src="../../assets/newimglisting/photo-building.png" class="card-img-top px-2 pt-2"
+                    alt="buildingimg" />
+                <div class="card-body d-flex justify-content-between">
+                    <div class="px-2 pt-1">
+                        <h5 class="cardAminity">Palladium Homes</h5>
+                        <h6 class="mt-3 featuredes" style="font-size: 14px;"><span><img src="../../assets/Rounded.png"
+                                    alt="arrow" class="img-fluid me-2"
+                                    style="height: 20px;"></span>Bandra,West,Mumbai-36</h6>
+                        <h4 class="pt-3 pb-4 cardAminity">Rs. 1,00,000/-</h4>
+                        <button type="button" class="btn blcolor my-3 me-3 px-4 py-3 shadow-lg" aria-current="page">
+                            BUY NOW
+                            <span><img src="../../assets/rightarrow.png" alt="arrow" class="img-fluid ms-5"
+                                    style="height: 20px" /></span>
+                        </button>
+                    </div>
+                    <div class="ms-3 me-4">
+                        <h5 class="mb-4 mt-3 aminities" style="font-size: 14px;">
+                            <span class="px-3">
+                                <img src="../../assets/newimglisting/Icon awesome-shower.png" alt="arrow"
+                                    class="img-fluid" style="height: 15px" /></span>Finished Baths
+                        </h5>
+                        <h5 class="mb-4 mt-3 aminities" style="font-size: 14px;">
+                            <span class="px-3">
+                                <img src="../../assets/newimglisting/Icon ionic-ios-bed.png" alt="arrow"
+                                    class="img-fluid" style="height: 15px" /></span>Spacious Bedrooms
+                        </h5>
+                        <h5 class="mb-4 mt-3 aminities" style="font-size: 14px;">
+                            <span class="px-3">
+                                <img src="../../assets/newimglisting/Icon ionic-md-tv.png" alt="arrow" class="img-fluid"
+                                    style="height: 15px" /></span>Luxuries Livings
+                        </h5>
+                        <img class="mt-5 ms-4 pt-5 w-75"
+                            src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/Resources%20-%20Main/Images/stars.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
