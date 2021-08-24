@@ -1,0 +1,60 @@
+.headtextdes {
+  margin-top: 10vh;
+  margin-bottom: 2vh;
+  font-size: 54px;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 2px;
+  color: rgba(153, 153, 153, 0.3);
+}
+.featuredes {
+  font-size: 14px;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 2px;
+  color: #999999;
+}
+.cardtitledes {
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 2px;
+  font-size: 26px;
+}
+.aminities {
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 2px;
+  color: #999999;
+}
+.carddes {
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+}
+.blcolor {
+  background-color: #016450;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 1.5px;
+  color: #ffffff;
+}
+.bscolor {
+  background-color: #ffffff;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 1.5px;
+  color: #016450;
+}
+.button1 {
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 1.5px;
+  color: #016450;
+  border: 2px solid #016450;
+}

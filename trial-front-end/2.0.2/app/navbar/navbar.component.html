@@ -1,0 +1,69 @@
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light mt-4">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" routerLink=""><img src="../../assets/Logo.png" class="img-fluid w-75"
+                    *ngIf="dataSharingService.homeFlag || dataSharingService.bookingsFlag || dataSharingService.listingFlag || dataSharingService.propertyFlag || dataSharingService.signinFlag || dataSharingService.signupFlag || dataSharingService.wishlistFlag || dataSharingService.pagenotfoundFlag" /></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown ms-3 d-none d-lg-block"
+                        *ngIf="dataSharingService.homeFlag || dataSharingService.listingFlag">
+                        <a class="nav-link link-style dropdown-toggle border-0 label-style" href="#" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            LOCATION
+                        </a>
+                        <ul class="dropdown-menu mx-auto" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" *ngFor="let location of locationService.locations"
+                                    href="home/{{location.id}}">{{location.city}}</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mx-auto px-4"
+                        *ngIf="dataSharingService.bookingsFlag || dataSharingService.listingFlag || dataSharingService.propertyFlag || dataSharingService.signinFlag || dataSharingService.signupFlag || dataSharingService.wishlistFlag">
+                        <a class="nav-link link-style" aria-current="page" routerLink="/listings/buy">BUY</a>
+                    </li>
+                    <hr>
+                    <li class="nav-item mx-auto px-4"
+                        *ngIf="dataSharingService.bookingsFlag || dataSharingService.listingFlag || dataSharingService.propertyFlag || dataSharingService.signinFlag || dataSharingService.signupFlag || dataSharingService.wishlistFlag">
+                        <a class="nav-link link-style" aria-current="page" routerLink="/listings/rent">RENT</a>
+                    </li>
+                    <hr>
+                </ul>
+
+                <ul class="navbar-nav" *ngIf="auth.currentUser.userId==0">
+                    <button type="button" class="btn btn-white mx-5 mx-lg-3 my-2 my-lg-0 px-3 shadow-lg"
+                        aria-current="page"
+                        *ngIf="dataSharingService.homeFlag || dataSharingService.bookingsFlag || dataSharingService.listingFlag || dataSharingService.propertyFlag || dataSharingService.signinFlag || dataSharingService.signupFlag || dataSharingService.wishlistFlag || dataSharingService.pagenotfoundFlag"
+                        routerLink="/signup">SIGNUP</button>
+                    <button type="button" class="btn btn-green mx-5 mx-lg-3 my-2 my-lg-0 px-3 shadow-lg"
+                        aria-current="page"
+                        *ngIf="dataSharingService.homeFlag || dataSharingService.bookingsFlag || dataSharingService.listingFlag || dataSharingService.propertyFlag || dataSharingService.signinFlag || dataSharingService.signupFlag || dataSharingService.wishlistFlag || dataSharingService.pagenotfoundFlag"
+                        routerLink="/signin">LOGIN</button>
+                </ul>
+
+                <ul class="navbar-nav" *ngIf="auth.currentUser.userId!=0">
+                    <button type="button" class="btn btn-green mx-5 mx-lg-3 my-2 my-lg-0 px-3 shadow-lg"
+                        aria-current="page" routerLink="/wishlist">WISHLIST</button>
+                    <button type="button" class="btn btn-green mx-5 mx-lg-3 my-2 my-lg-0 px-3 shadow-lg"
+                        aria-current="page" routerLink="/bookings">BOOKINGS</button>
+                    <button type="button" class="btn btn-white mx-5 mx-lg-3 my-2 my-lg-0 px-3 shadow-lg"
+                        aria-current="page" (click)="auth.signOut()" routerLink="">LOGOUT</button>
+                </ul>
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-lg-none">
+                    <hr>
+                    <li class="nav-item mx-auto my-3">
+                        <div *ngFor="let location of locationService.locations" class="d-inline">
+                            <a class="dropdown-item d-inline" href="home/{{location.id}}">{{location.city}}</a> |
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
