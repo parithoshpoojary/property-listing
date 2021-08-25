@@ -1,4 +1,4 @@
-package com.model;
+package com.pl.main.ws.userclass;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,17 +25,8 @@ public class User {
 		
 	}
 	
-	//This constructor is overloaded to this user model compatible with angular user model
-//	public User(String username, String password, String firstName, String lastName) {
-//		this();
-//		this.username = username;
-//		this.password = password;
-//		this.firstName = firstName;
-//		this.lastName = lastName;
-//	}
-
 	public User(Integer id, String username, String password, String firstName, String lastName, String siteReview) {
-//		this(username, password, firstName, lastName);
+		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;

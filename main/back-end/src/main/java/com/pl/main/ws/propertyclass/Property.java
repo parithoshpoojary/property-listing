@@ -1,4 +1,4 @@
-package com.model;
+package com.pl.main.ws.propertyclass;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +12,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import com.pl.main.ws.addressclass.Address;
+import com.pl.main.ws.categoryclass.Category;
+import com.pl.main.ws.image.Image;
 
 @Entity(name = "properties")
 public class Property {

@@ -1,4 +1,4 @@
-package com.model;
+package com.pl.main.ws.addressclass;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

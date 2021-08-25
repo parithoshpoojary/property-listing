@@ -1,4 +1,4 @@
-package com.model;
+package com.pl.main.ws.propertyclass;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface PropertiesRepository extends CrudRepository<Property, Integer> {
 	
-	List<Property> findByLocationId(int locationId);
+List<Property> findByLocationId(int locationId);
 	
 	List<Property> findByCategoryId(int categoryId);
 	
@@ -28,6 +28,11 @@ public interface PropertiesRepository extends CrudRepository<Property, Integer> 
 	List<Property> findByCategoryIdAndListForOrderByAvgRatingDesc(int categoryId, String listFor);
 
 	List<Property> findByCategoryIdAndListFor(int categoryId, String listFor);
+	
+	@Query(nativeQuery = true, value = "SELECT * FROM properties WHERE id in :ids ;")
+	List<Property> findPropertiesByIds(List<Integer> ids);
+	
+	Property findById(int id);
 
 	List<Property> findByLocationIdAndListForOrderByPriceAsc(int locationId, String listFor);
 	

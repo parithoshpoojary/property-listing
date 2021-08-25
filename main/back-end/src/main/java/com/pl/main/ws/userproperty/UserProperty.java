@@ -1,4 +1,4 @@
-package com.model;
+package com.pl.main.ws.userproperty;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
