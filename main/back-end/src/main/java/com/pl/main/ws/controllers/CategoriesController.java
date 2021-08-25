@@ -1,5 +1,4 @@
-package com;
-
+package com.pl.main.ws.controllers;
 
 import java.util.List;
 
@@ -8,8 +7,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.model.CategoriesRepository;
-import com.model.Category;
+import com.pl.main.ws.categoryclass.CategoriesRepository;
+import com.pl.main.ws.categoryclass.Category;
 
 @RestController
 @CrossOrigin(origins = "*")

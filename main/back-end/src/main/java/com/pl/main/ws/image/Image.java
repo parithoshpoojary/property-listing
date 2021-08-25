@@ -1,4 +1,4 @@
-package com.model;
+package com.pl.main.ws.image;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.pl.main.ws.propertyclass.Property;
 
 @Entity(name = "images")
 public class Image {
