@@ -1,4 +1,4 @@
-package com.pl.main.ws.controllers;
+package com;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pl.main.ws.locationclass.Location;
-import com.pl.main.ws.locationclass.LocationsRepository;
+import com.model.Location;
+import com.model.LocationsRepository;
 
 @RestController
 @CrossOrigin(origins = "*")

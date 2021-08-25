@@ -1,4 +1,4 @@
-package com.pl.main.ws.locationclass;
+package com.model;
 
 import org.springframework.data.repository.CrudRepository;
 

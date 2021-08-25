@@ -1,4 +1,4 @@
-package com.pl.main.ws.categoryclass;
+package com.model;
 
 import org.springframework.data.repository.CrudRepository;
 
