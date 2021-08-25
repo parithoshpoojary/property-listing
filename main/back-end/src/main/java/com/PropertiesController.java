@@ -1,16 +1,21 @@
 package com;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.model.PropertiesRepository;
 import com.model.Property;
+import com.model.UserProperty;
+import com.model.UsersPropertiesRepository;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -18,7 +23,20 @@ public class PropertiesController {
 
 	@Autowired
 	PropertiesRepository propertiesRepository;
+	
+	@Autowired
+	UsersPropertiesRepository upRepository;
 
+	//Fetch property by id
+	@GetMapping("/property/{id}")
+	public Property getProperty(@PathVariable Integer id) {
+		Optional<Property> propOptional = propertiesRepository.findById(id);
+		if (propOptional.isPresent())
+			return propOptional.get();
+		else
+			return new Property();
+	}
+	
 	// Fetch all properties
 	@GetMapping("/propertyall")
 	public List<Property> getPropertiesAll() {
@@ -62,52 +80,52 @@ public class PropertiesController {
 	public List<Property> getPropByLocAndCat(@RequestParam(required = true) String listFor,
 			@RequestParam(required = false) Integer locationId,
 			@RequestParam(required = false) Integer categoryId,
-			@RequestParam(required = false) Integer shortBy) {
+			@RequestParam(required = false) Integer sortBy) {
 		
 		if ((categoryId != null) && (locationId==null)) {
 			
-			if (shortBy==null)
+			if (sortBy==null)
 				return (List<Property>) propertiesRepository.findByCategoryIdAndListFor(categoryId, listFor);
 			
-			else if (shortBy==1)
+			else if (sortBy==1)
 				return (List<Property>) propertiesRepository.findByCategoryIdAndListForOrderByPriceAsc(categoryId, listFor);
 				
-			else if (shortBy==2) 
+			else if (sortBy==2) 
 				return (List<Property>) propertiesRepository.findByCategoryIdAndListForOrderByPriceDesc(categoryId, listFor);
 				
-			else if (shortBy==3)
+			else if (sortBy==3)
 				return (List<Property>) propertiesRepository.findByCategoryIdAndListForOrderByAvgRatingDesc(categoryId, listFor);
 			
 		}
 		
 		else if ((locationId != null) && (categoryId == null)) {
 			
-			if (shortBy==null)
+			if (sortBy==null)
 				return (List<Property>) propertiesRepository.findByLocationIdAndListFor(locationId, listFor);
 			
-			else if (shortBy==1)
+			else if (sortBy==1)
 				return (List<Property>) propertiesRepository.findByLocationIdAndListForOrderByPriceAsc(locationId, listFor);
 				
-			else if (shortBy==2) 
+			else if (sortBy==2) 
 				return (List<Property>) propertiesRepository.findByLocationIdAndListForOrderByPriceDesc(locationId, listFor);
 				
-			else if (shortBy==3)
+			else if (sortBy==3)
 				return (List<Property>) propertiesRepository.findByLocationIdAndListForOrderByAvgRatingDesc(locationId, listFor);	
 			
 		}
 		
 		else if ((locationId != null) && (categoryId != null)) {
 			
-			if (shortBy==null)
+			if (sortBy==null)
 				return (List<Property>) propertiesRepository.findByLocationIdAndCategoryIdAndListFor(locationId, categoryId, listFor);
 			
-			else if (shortBy==1)
+			else if (sortBy==1)
 				return (List<Property>) propertiesRepository.findByLocationIdAndCategoryIdAndListForOrderByPriceAsc(locationId, categoryId, listFor);
 				
-			else if (shortBy==2) 
+			else if (sortBy==2) 
 				return (List<Property>) propertiesRepository.findByLocationIdAndCategoryIdAndListForOrderByPriceDesc(locationId, categoryId, listFor);
 				
-			else if (shortBy==3)
+			else if (sortBy==3)
 				return (List<Property>) propertiesRepository.findByLocationIdAndCategoryIdAndListForOrderByAvgRatingDesc(locationId, categoryId, listFor);	
 			
 		}
@@ -116,5 +134,22 @@ public class PropertiesController {
 		
 	}
 	
+	//Fetch reviews of particular property
+	@GetMapping("/propertyreview/{propId}")
+	public List<String> getPropReview(@PathVariable Integer propId) {
+		return (List<String>) upRepository.findPropertyReview(propId);
+	}
+	
+	//save data to review
+	@PutMapping("/propertyreview")
+	public void setPropReview(@RequestBody UserProperty up) {
+		try {
+			upRepository.save(up);
+			System.out.println(upRepository.save(up));
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 }

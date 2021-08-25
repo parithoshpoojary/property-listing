@@ -19,13 +19,23 @@ public class AuthController {
 	//Sign Up
 	@PostMapping("/signup")
 	public User singUp(@RequestBody User user) {
-		return usersRepository.save(user);
+		try {
+			return usersRepository.save(user);
+		}
+		catch (Exception e) {
+			return new User();
+		}
 	}
 	
 	//Log In
 	@PostMapping("/login")
 	public User logIn(@RequestBody User user) {
-		return usersRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword());
+		try {
+			return usersRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword());
+		}
+		catch (Exception e) {
+			return new User();
+		}
 	}
 
 }

@@ -2,6 +2,7 @@ package com.model;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 public interface PropertiesRepository extends CrudRepository<Property, Integer> {
@@ -12,7 +13,12 @@ public interface PropertiesRepository extends CrudRepository<Property, Integer> 
 	
 	List<Property> findByNameLike(String name);
 	
+	Property findById(int id);
+	
 	List<Property> findByPriceBetween(float lowPrice, float highPrice);
+	
+	@Query(nativeQuery = true, value = "SELECT * FROM properties WHERE id in :ids ;")
+	List<Property> findPropertiesByIds(List<Integer> ids);
 	
 	//Filtering Queries based on filtering form submitted...
 	List<Property> findByCategoryIdAndListForOrderByPriceAsc(int categoryId, String listFor);
