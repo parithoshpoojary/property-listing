@@ -1,0 +1,80 @@
+/* Hero-box (featured) */
+#feat-head {
+    background-color: #E0EBED;
+}
+
+.heading-big {
+    color: #016450;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    font-family: "Segoe UI";
+    font-weight: 700;
+    src: local("Segoe UI Bold");
+    line-height: 2rem;
+}
+
+#filter-form {
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+
+#search-btn {
+  background-color: #016450;
+  color: #ffffff;
+}
+
+.heading-med {
+  letter-spacing: 5px;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+}
+
+.card-price {
+  font-size: 1.3rem;
+}
+
+.aminities {
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 2px;
+  color: #999999;
+  font-size: 14px;
+}
+.prop-name {
+  text-decoration: none;
+  color: black;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  font-family: "Segoe UI";
+  src: local("Segoe UI Bold");
+  line-height: 2rem;
+}
+.btn-green {
+  background-color: #016450;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 1.5px;
+  color: #ffffff;
+}
+
+.btn-lgrey {
+  background-color: #E0EBED;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 1.5px;
+  color: #016450;
+}
+
+.btn-content {
+  font-family: "Segoe UI";
+  src: local("Segoe UI Bold");
+  font-size: 14px;
+}
+
+.checked {
+  color: orange;
+}

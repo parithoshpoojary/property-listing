@@ -1,0 +1,147 @@
+<div class="container mt-5">
+    <div class="row justify-content-around g-5">
+        <div class="col-9">
+            <img src="{{propService.property.images[0].imageurl}}" class="img-fluid h-100" />
+        </div>
+        <div class="col-3 shadow-lg rounded border-0">
+            <div class="card border-0">
+                <img src="../../assets/wishlistbuilding1.png" class="img-fluid my-3" />
+            </div>
+            <div class="card border-0">
+                <img src="../../assets/wishlistbuilding2.png" class="img-fluid mb-3" />
+            </div>
+            <div class="card border-0">
+                <img src="../../assets/wishlistbuilding1.png" class="img-fluid mb-3" />
+            </div>
+        </div>
+    </div>
+    <!-- Body Text Start -->
+    <div class="row mt-4">
+        <div class="row">
+            <div class="col-6">
+                <h2 class="mt-4 titledes">{{propService.property.name}}</h2>
+            </div>
+            <div class="col-3"></div>
+            <div class="col-3 mt-4">
+                <img src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/Resources%20-%20Main/Images/stars.png"
+                    alt="stars" class="w-100">
+            </div>
+        </div>
+        <h6 class="mt-3 featuredes">
+            <span><img src="../../assets/Rounded.png" alt="arrow" class="img-fluid me-2"
+                    style="height: 20px" /></span>{{propService.property.address.line1 + " " + propService.property.address.line2}}
+        </h6>
+        <h6 class="mt-4 titledes">Rs. {{propService.property.price}}</h6>
+        <div class="d-flex justify-content-start">
+            <div class="me-2 mt-5 pe-5">
+                <h5 class="mb-5 aminities" style="font-size: 16px">
+                    <span class="me-4">
+                        <img src="../../assets/newimglisting/Icon awesome-shower.png" alt="arrow" class="img-fluid"
+                            style="height: 25px" /></span>Finished Baths
+                </h5>
+                <h5 class="mb-5 aminities" style="font-size: 16px">
+                    <span class="me-4">
+                        <img src="../../assets/newimglisting/Icon ionic-ios-bed.png" alt="arrow" class="img-fluid"
+                            style="height: 25px" /></span>Spacious Bedrooms
+                </h5>
+                <h5 class="mb-5 aminities" style="font-size: 16px">
+                    <span class="me-4">
+                        <img src="../../assets/newimglisting/Icon ionic-md-tv.png" alt="arrow" class="img-fluid"
+                            style="height: 25px" /></span>Luxuries Livings
+                </h5>
+            </div>
+            <div class="me-3 mt-5 aminities">
+                <h5 class="mb-5 aminities" style="font-size: 16px">
+                    <span class="me-4">
+                        <img src="../../assets/newimglisting/Icon awesome-parking.png" alt="arrow" class="img-fluid"
+                            style="height: 25px" /></span>Ample Parking Space
+                </h5>
+                <h5 class="mb-5 aminities" style="font-size: 16px">
+                    <span class="me-4">
+                        <img src="../../assets/newimglisting/Icon map-park.png" alt="arrow" class="img-fluid"
+                            style="height: 25px" /></span>Play Area
+                </h5>
+                <h5 class="mb-5 aminities" style="font-size: 16px">
+                    <span class="me-4">
+                        <img src="../../assets/newimglisting/Icon map-tennis.png" alt="arrow" class="img-fluid"
+                            style="height: 25px" /></span>Tennis Court
+                </h5>
+            </div>
+        </div>
+    </div>
+    <!-- Body Text Ends -->
+
+    <!-- Action Btn Start -->
+    <div class="d-flex">
+        <div>
+            <a type="button" routerLink="/wishlist/{{auth.currentUser.userId}}" class="btn bscolor my-3 me-3 px-4 py-3 shadow-lg" aria-current="page">
+                WISHLIST
+                <span><img src="../../assets/newimglisting/Icon ionic-ios-cart.png" alt="arrow" class="img-fluid ms-2"
+                        style="height: 20px" /></span>
+            </a>
+        </div>
+        <div>
+            <a type="button" routerLink="/bookings/{{auth.currentUser.userId}}" class="btn blcolor my-3 me-3 px-4 py-3 shadow-lg" aria-current="page">
+                BUY NOW
+                <span><img src="../../assets/rightarrow.png" alt="arrow" class="img-fluid ms-2"
+                        style="height: 20px" /></span>
+            </a>
+        </div>
+    </div>
+    <!-- Action Btn Ends -->
+
+    <!-- Review cards Start-->
+    <div class="container mb-5">
+        <h2 class="des0 text-center mb-5">REVIEWS</h2>
+        <div class="row g-3 justify-content-around">
+            <div class="col-md-4" *ngFor="let review of reviews, let i=index">
+                <div id="review-card" class="card border-0 mb-5 shadow-lg">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <img src="../../assets/man.png" class="img-fluid h-100 p-2 rounded-start" alt="...">
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body">
+                                <img src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/Resources%20-%20Main/Images/stars.png"
+                                    alt="stars" class="w-75 mb-3">
+                                <!-- <h5 class="card-title"></h5> -->
+                                <p class="card-text cont-med">{{review}}</p>
+                                <p class="card-text cont-name"><small>Reviewed at {{i+2}} dec</small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Review cards End-->
+
+    <!-- Review Form Start -->
+    <div class="container my-5">
+        <div class="card border-0 shadow-lg mx-5" style="border-radius: 15px;">
+            <h5 class="text-center mt-4">REVIEW</h5>
+            <form (ngSubmit)="userReview(reviewForm)" #reviewForm="ngForm">
+                <div class="my-4 mx-5">
+                    <label for="exampleInputEmail1" class="form-label"></label>
+                    <input type="text" name="userName" ngModel class="form-control py-3 review-des border-0" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="USERNAME">
+                </div>
+                <img src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/Resources%20-%20Main/Images/stars.png"
+                    alt="stars" class="w-25 mb-2 ms-5">
+                <div class="mb-4 mx-5">
+                    <label for="exampleFormControlTextarea1" class="form-label"></label>
+                    <textarea name="review" ngModel class="form-control review-des border-0" id="exampleFormControlTextarea1" rows="3"
+                        placeholder="REVIEW"></textarea>
+                </div>
+                <a type="button" class="btn blcolor mt-3 mb-5 ms-5 px-4 py-3 shadow-lg" aria-current="page">
+                    SUBMIT
+                    <span><img src="../../assets/rightarrow.png" alt="arrow" class="img-fluid ms-3"
+                            style="height: 20px" /></span>
+                </a>
+            </form>
+        </div>
+    </div>
+    <!-- Review Form End -->
+
+</div>
