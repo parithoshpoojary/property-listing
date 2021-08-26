@@ -1,7 +1,7 @@
 export class Image {
-    private id: number;
-    private imageurl: string;
-    private size: number;
+    id: number;
+    imageurl: string;
+    size: number;
 
     constructor() {
         this.id = 0;

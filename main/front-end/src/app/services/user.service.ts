@@ -10,7 +10,10 @@ export class UserService {
 
   constructor(private http: HttpClient) { 
     this.reviews = [];
-    this.http.get<string[][]>("http://localhost:8080/websitereviews").subscribe((data: string[][]) => {this.reviews = data})
   }
 
+  setWebsiteReviews() {
+    this.http.get<string[][]>("http://localhost:8080/websitereviews").subscribe((data: string[][]) => {this.reviews = data});
+  }
+  
 }

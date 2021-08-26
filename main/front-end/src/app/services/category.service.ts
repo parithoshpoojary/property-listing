@@ -11,7 +11,10 @@ export class CategoryService {
 
   constructor(private http: HttpClient) {
     this.categories = [];
-    this.http.get<Category[]>("http://localhost:8080/categories").subscribe((data: Category[]) => {this.categories = data})
+  }
+
+  setCategories() {
+    this.http.get<Category[]>("http://localhost:8080/categories").subscribe((data: Category[]) => {this.categories = data});
   }
 
 }

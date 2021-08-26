@@ -11,7 +11,11 @@ export class LocationService {
 
   constructor(public http: HttpClient) {
     this.locations = [];
-    this.http.get<Location[]>("http://localhost:8080/cities").subscribe((data: Location[]) => {this.locations = data});
   }
+
+  setLocations() {
+    this.http.get<Location[]>("http://localhost:8080/cities").subscribe((data: Location[]) => { this.locations = data });
+  }
+
 
 }

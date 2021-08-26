@@ -13,7 +13,8 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  
+  locationId: number;
   properties: Property[];
 
   constructor(public locationService: LocationService,
@@ -22,22 +23,31 @@ export class HomeComponent implements OnInit {
               public propService: PropertyService,
               public dataSharing: DataSharingService,
               public route: ActivatedRoute,
-              public router: Router) {
-    this.properties = [];
+              public router: Router) { 
+                this.properties = [];
+                this.locationId = 1;
   }
 
   ngOnInit(): void {
+    this.dataSharing.homeFlag = true;
+    this.dataSharing.listingFlag = false;
+    this.dataSharing.bookingsFlag = false;
+    this.dataSharing.propertyFlag = false;
+    this.dataSharing.signinFlag = false;
+    this.dataSharing.signupFlag = false;
+    this.dataSharing.wishlistFlag = false;
+
     this.makeDashboard();
   }
 
   makeDashboard() {
-    const locationId = Number(this.route.snapshot.paramMap.get('locationId'));
-    this.propService.getPropertiesByLocation(locationId).subscribe((data: Property[]) => { this.properties = data });
+    this.locationId = Number(this.route.snapshot.paramMap.get('locationId'));
+    this.propService.getPropertiesByLocation(this.locationId).subscribe((data: Property[]) => { this.propService.properties = data });
   }
 
-  sendForm(filterForm: any) {
-    console.log(filterForm.value);
-    this.dataSharing.formData = filterForm;
+  sendFormToListings(filterForm: any) {
+    this.dataSharing.formData = filterForm.value;
+    console.log(this.dataSharing.formData);
     this.router.navigateByUrl('/listings');
   }
 

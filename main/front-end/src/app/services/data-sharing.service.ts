@@ -1,6 +1,4 @@
-import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Injectable } from '@angular/core';
-import { FormControl, FormGroup, NgForm } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +6,18 @@ import { FormControl, FormGroup, NgForm } from '@angular/forms';
 export class DataSharingService {
 
   public formData: any;
+  
+  homeFlag: boolean = false;
+  listingFlag: boolean = false;
+  propertyFlag: boolean = false;
+  signinFlag: boolean = false;
+  signupFlag: boolean = false;
+  wishlistFlag: boolean = false;
+  bookingsFlag: boolean = false;
+  pagenotfoundFlag: boolean = false;
 
   constructor() {
     this.formData = {};
   }
+  
 }

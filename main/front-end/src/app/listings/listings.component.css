@@ -1,16 +1,16 @@
 /* Hero-box (featured) */
-#feat-box .row .col-8 {
-    background-color: #E0EBED;
+#feat-head {
+  background-color: #e0ebed;
 }
 
 .heading-big {
-    color: #016450;
-    letter-spacing: 5px;
-    font-size: 2rem;
-    font-family: "Segoe UI";
-    font-weight: 700;
-    src: local("Segoe UI Bold");
-    line-height: 2rem;
+  color: #016450;
+  font-size: 2rem;
+  letter-spacing: 5px;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  line-height: 2rem;
 }
 
 #filter-form {
@@ -23,61 +23,60 @@
   color: #ffffff;
 }
 
-.label-style {
-  border-radius: 7px;
+.prop-name {
+  text-decoration: none;
+  color: black;
+  font-size: 2rem;
+  letter-spacing: 3px;
   font-family: "Segoe UI";
-  font-weight: 600;
-  src: local("Segoe UI SemiBold");
-  letter-spacing: 1.5px;
+  src: local("Segoe UI Bold");
+  line-height: 2rem;
 }
 
-  .blcolor {
-    background-color: #016450;
-    font-family: "Segoe UI";
-    font-weight: 700;
-    src: local("Segoe UI Bold");
-    letter-spacing: 1.5px;
-    color: #ffffff;
-  }
-  .bscolor {
-    background-color: #ffffff;
-    font-family: "Segoe UI";
-    font-weight: 700;
-    src: local("Segoe UI Bold");
-    letter-spacing: 1.5px;
-    color: #016450;
-  }
-  .featuredes {
-    font-size: 14px;
-    font-family: "Segoe UI";
-    font-weight: 700;
-    src: local("Segoe UI Bold");
-    letter-spacing: 2px;
-    color: #999999;
-  }
-  .titledes {
-    font-family: "Segoe UI";
-    font-weight: 700;
-    src: local("Segoe UI Bold");
-    letter-spacing: 1.5px;
-    font-size: 38px;
-  }
-  .aminities {
-    font-family: "Segoe UI";
-    font-weight: 700;
-    src: local("Segoe UI Bold");
-    letter-spacing: 2px;
-    color: #999999;
-  }
-  
-  .carddes1 {
-    border-radius: 15px;
-    /* box-shadow: 20vw 5vw rgba(1, 100, 80, 0.09); */
-  }
-  .cardAminity {
-    font-family: "Segoe UI";
-    font-weight: 700;
-    src: local("Segoe UI Bold");
-    letter-spacing: 1.5px;
-    font-size: 28px;
-  }
+.heading-med {
+  letter-spacing: 5px;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+}
+
+.card-price {
+  font-size: 1.3rem;
+}
+
+.aminities {
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 2px;
+  color: #999999;
+  font-size: 14px;
+}
+
+.btn-green {
+  background-color: #016450;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 1.5px;
+  color: #ffffff;
+}
+
+.btn-lgrey {
+  background-color: #e0ebed;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  src: local("Segoe UI Bold");
+  letter-spacing: 1.5px;
+  color: #016450;
+}
+
+.btn-content {
+  font-family: "Segoe UI";
+  src: local("Segoe UI Bold");
+  font-size: 14px;
+}
+
+.checked {
+  color: orange;
+}

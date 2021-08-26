@@ -4,10 +4,12 @@ import { Router } from '@angular/router';
 import { User } from '../model/user';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class AuthService {
+
   currentUser: User;
+  
   constructor(public http: HttpClient, public router: Router) {
     this.currentUser = new User();
   }
@@ -23,4 +25,5 @@ export class AuthService {
   signOut() {
     this.currentUser = new User();
   }
+  
 }

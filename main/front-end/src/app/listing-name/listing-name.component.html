@@ -1,0 +1,71 @@
+<div class="container mt-3">
+    <div id="form-container" class="row justify-content-center my-3 my-lg-0 ">
+        <div class="col-12 col-md-8">
+            <form (ngSubmit)="searchByName(searchForm)" #searchForm="ngForm" id="filter-form"
+                class="row align-items-center px-lg-0 border-0 p-2 shadow">
+                <div class="col-12 col-sm-10 mx-auto">
+                    <input type="text" name="propName" ngModel class="form-control" id="exampleFormControlInput1"
+                        placeholder="Search By Name">
+                </div>
+                <div class="col-12 col-sm-2 mx-auto">
+                    <button type="submit" name="search" id="search-btn"
+                        class="btn material-icons shadow-lg mx-auto py-3 px-3 d-none d-sm-block">
+                        search
+                    </button>
+                    <button type="submit" name="search" id="search-btn"
+                        class="btn shadow-lg py-3 px-3 my-2 w-100 d-block d-sm-none">
+                        search
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Cards -->
+<div class="container my-5">
+    <div class="row g-4">
+        <div class="col-12 col-md-6" *ngFor="let property of propService.properties.slice(1)">
+            <div class="card border-0 shadow-lg" style="border-radius: 15px;">
+                <img src="{{property.images[0].imageurl}}" class="card-img-top px-2 pt-2" alt="buildingimg" />
+                <div class="card-body d-flex justify-content-between">
+                    <div class="px-2 pt-1">
+                        <a class="cardAminity" routerLink="/property/{{propService.properties[0].id}}">
+                            <h5 class="card-title">{{propService.properties[0].name}}</h5>
+                        </a>
+                        <h6 class="mt-3 featuredes" style="font-size: 14px;"><span><img src="../../assets/Rounded.png"
+                                    alt="arrow" class="img-fluid me-2"
+                                    style="height: 20px;"></span>{{property.address.line1 + " " +
+                            property.address.line2}}</h6>
+                        <h4 class="pt-3 pb-4 cardAminity">{{property.price}}</h4>
+                        <button type="button" routerLink="/bookings" class="btn blcolor my-3 me-3 px-4 py-3 shadow-lg"
+                            aria-current="page">
+                            BUY NOW
+                            <span><img src="../../assets/rightarrow.png" alt="arrow" class="img-fluid ms-5"
+                                    style="height: 20px" /></span>
+                        </button>
+                    </div>
+                    <div class="ms-3 me-4">
+                        <h5 class="mb-4 mt-3 aminities" style="font-size: 14px;">
+                            <span class="px-3">
+                                <img src="../../assets/newimglisting/Icon awesome-shower.png" alt="arrow"
+                                    class="img-fluid" style="height: 15px" /></span>Finished Baths
+                        </h5>
+                        <h5 class="mb-4 mt-3 aminities" style="font-size: 14px;">
+                            <span class="px-3">
+                                <img src="../../assets/newimglisting/Icon ionic-ios-bed.png" alt="arrow"
+                                    class="img-fluid" style="height: 15px" /></span>Spacious Bedrooms
+                        </h5>
+                        <h5 class="mb-4 mt-3 aminities" style="font-size: 14px;">
+                            <span class="px-3">
+                                <img src="../../assets/newimglisting/Icon ionic-md-tv.png" alt="arrow" class="img-fluid"
+                                    style="height: 15px" /></span>Luxuries Livings
+                        </h5>
+                        <div> <span class="mx-auto" *ngFor="let star of stars.slice(0,property.avgRating), let i=index"
+                                [class]="star"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
