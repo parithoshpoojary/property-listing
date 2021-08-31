@@ -3,7 +3,6 @@
 `PL (Property-Listing)` is an online web application that serves as a single platform for property buyers and sellers in India to discover properties of interest.
 
 ## Features 
-The features of the property listing application are given below. 
 
 **The following are the `functionalities` made available to the end user:**
 * Signup and Login into the website.
@@ -15,12 +14,6 @@ The features of the property listing application are given below.
 * Adding a new property to the Wishlist or to the Cart 
 * Removing and viewing properties in the wishlist and cart.
 * Placing the order.
-
-**The following `technologies` were employed in this project:**
-* Angular
-* Spring Boot
-* MySQL
-* Adobe XD
 
 ## Property Listing - UI
 
@@ -39,16 +32,10 @@ The features of the property listing application are given below.
 
 ```
 git clone https://github.com/parithoshpoojary/angular-springboot-property-listing.git
-cd angular-springboot-property-listing
 ```
 
 This will get a copy of the project installed locally. To install all of its dependencies and start each app, follow the instructions below.
 
-#### To run the server, cd into the backend folder and run:
-
-```
-./mvnw spring-boot:run
-```
 #### To run the angular application, cd into the frontend folder and run:
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -69,13 +56,4 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 * The `Resources-Main` contains all the icons, images, buttons used in the web application.
 
 
-## Maintainers
-#### This project is mantained by:
-* [Parithosh Poojary](https://github.com/parithoshpoojary)
-* [Vivek L](https://github.com/vivek-zanee)
-* [Mohammed Arif](https://github.com/arifnagauri)
-* [Tejal B Guttal](https://github.com/KeerthiGuttal)
-* [Rithvik](https://github.com/rithvik1499)
-* [Kiran](https://github.com/Kiran-s9)
-
-#### LICENSE for the project can be [found here](LICENSE)
+#### LICENSE for the angular-springboot-property-listing can be [found here](LICENSE)
