@@ -1,7 +1,6 @@
-## <img src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/Resources%20-%20Main/Images/Logo.png">
+# <img src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/Resources%20-%20Main/Images/Logo.png" width="45" height="40" align="left">  Property Listing
 
-`PL (Property-Listing)` is an online application that serves as a single platform for property buyers and sellers in India to discover properties of interest.
-
+`PL (Property-Listing)` is an online web application that serves as a single platform for property buyers and sellers in India to discover properties of interest.
 
 ## Features 
 The features of the property listing application are given below. 
@@ -33,21 +32,23 @@ The features of the property listing application are given below.
   <img src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/User%20Interface%20-%20Design/UI%20Desgins/UI%20-%20Github.png">
 </p>
 
-## Routes
+## Branches
 
 #### Master Branch
 * The `trails` folder contains all the trail/test versions of the web application.
 * The `master` folder contains the final code.
-  * [Backend (WebService)](https://github.com/parithoshpoojary/property-listing/tree/master/master/back-end%20(webservice)) - This contains the code for the backend and the webservice(RESTful Api) that is created. 
+  * [Backend (WebService)](https://github.com/parithoshpoojary/property-listing/tree/master/master/back-end%20(webservice)) - This contains the code for the backend and the webservice(RESTful API) that is created. 
   * [Database](https://github.com/parithoshpoojary/property-listing/blob/master/master/database) - This consists of the database design and the database(sql) code for creating the database.
   * [Frontend](https://github.com/parithoshpoojary/property-listing/tree/master/master/front-end) - This contains the code for the frontend of the web application.
   
 #### Resources Branch
-* The `PL-UI` contains all the UI images that is used in the making the web application.
+* The `User Interface - Design` contains all the UI images that is used in the making the web application.
 * The `Resources-Main` contains all the icons, images, buttons used in the web application.
 
 
-## Development Server (Angular)
+## Development Server 
+
+#### Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
 
