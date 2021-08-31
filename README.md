@@ -32,28 +32,50 @@ The features of the property listing application are given below.
   <img src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/User%20Interface%20-%20Design/UI%20Desgins/UI%20-%20Github.png">
 </p>
 
+
+## Getting Started
+
+#### To install this example application, run the following commands:
+
+```
+git clone https://github.com/parithoshpoojary/angular-springboot-property-listing.git
+cd angular-springboot-property-listing
+```
+
+This will get a copy of the project installed locally. To install all of its dependencies and start each app, follow the instructions below.
+
+#### To run the server, cd into the backend folder and run:
+
+```
+./mvnw spring-boot:run
+```
+#### To run the angular application, cd into the frontend folder and run:
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
 ## Branches
 
 #### Master Branch
 * The `trails` folder contains all the trail/test versions of the web application.
 * The `master` folder contains the final code.
-  * [Backend (WebService)](https://github.com/parithoshpoojary/property-listing/tree/master/master/back-end%20(webservice)) - This contains the code for the backend and the webservice(RESTful API) that is created. 
-  * [Database](https://github.com/parithoshpoojary/property-listing/blob/master/master/database) - This consists of the database design and the database(sql) code for creating the database.
-  * [Frontend](https://github.com/parithoshpoojary/property-listing/tree/master/master/front-end) - This contains the code for the frontend of the web application.
+  * **[Backend (WebService)](https://github.com/parithoshpoojary/property-listing/tree/master/master/back-end%20(webservice))** - This contains the code for the backend and the webservice(RESTful API) that is created. 
+  * **[Database](https://github.com/parithoshpoojary/property-listing/blob/master/master/database)** - This consists of the database design and the database(sql) code for creating the database.
+  * **[Frontend](https://github.com/parithoshpoojary/property-listing/tree/master/master/front-end)** - This contains the code for the frontend of the web application.
   
 #### Resources Branch
 * The `User Interface - Design` contains all the UI images that is used in the making the web application.
 * The `Resources-Main` contains all the icons, images, buttons used in the web application.
 
 
-## Development Server 
+## Maintainers
+#### This project is mantained by:
+* [Parithosh Poojary](https://github.com/parithoshpoojary)
+* [Vivek L](https://github.com/vivek-zanee)
+* [Mohammed Arif](https://github.com/arifnagauri)
+* [Tejal B Guttal](https://github.com/KeerthiGuttal)
+* [Rithvik](https://github.com/rithvik1499)
+* [Kiran](https://github.com/Kiran-s9)
 
-#### Angular
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-
+#### LICENSE for the project can be [found here](LICENSE)
