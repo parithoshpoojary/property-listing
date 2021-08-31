@@ -26,11 +26,11 @@ The features of the property listing application are given below.
 ## Property Listing - UI
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/PL%20-%20UI/GIT%20UI.png">
+  <img src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/User%20Interface%20-%20Design/UI%20Desgins/GIT%20UI.png">
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/PL%20-%20UI/UI%20-%20Github.png">
+  <img src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/User%20Interface%20-%20Design/UI%20Desgins/UI%20-%20Github.png">
 </p>
 
 ## Routes
