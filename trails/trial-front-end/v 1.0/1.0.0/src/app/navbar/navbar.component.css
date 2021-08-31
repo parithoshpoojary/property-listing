@@ -1,0 +1,40 @@
+/*  */
+.pad {
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 40px;
+  }
+  .h2 {
+    color: #016450;
+    letter-spacing: 5px;
+    font-size: 12px;
+    font-family: "Segoe UI";
+    font-weight: 700;
+    src: local("Segoe UI Bold");
+    line-height: 3rem;
+    text-decoration: none;
+  }
+  .blcolor {
+    background-color: #016450;
+    font-family: "Segoe UI";
+    font-weight: 700;
+    src: local("Segoe UI Bold");
+    letter-spacing: 1.5px;
+    color: #ffffff;
+  }
+  .bscolor {
+    background-color: #ffffff;
+    font-family: "Segoe UI";
+    font-weight: 700;
+    src: local("Segoe UI Bold");
+    letter-spacing: 1.5px;
+    color: #016450;
+  }
+  .col {
+    color: #999999;
+    font-size: 14px;
+    font-family: "Segoe UI";
+    font-weight: 900;
+    src: local("Segoe UI Bold");
+  }
+  

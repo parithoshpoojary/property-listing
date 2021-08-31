@@ -1,0 +1,41 @@
+<div class="container-fluid my-5 p-5 card shadow-lg bg-white rounded border-0" style="width: auto;">
+  <div class="d-flex justify-content-between align-items-center py-2 px-4">
+    <div class="mx-5">
+      <h2 class="h2">Login to Start Buying your Dream Home</h2>
+      <h6 class="h6 pb-1">Dont have an account?<a href="../signup" class="link">Signup</a></h6>
+      <img src="../../assets/loginimg.png" class="img-fluid" />
+    </div>
+    <div class="mx-5">
+      <h4 class="h2 text-center">Log In</h4>
+      <form (ngSubmit)="signInSubmit(signInForm)" #signInForm="ngForm">
+        <div class="mb-4">
+          <label for="username" class="form-label lsp weig1 mt-5">Username</label>
+          <input type="text" class="form-control mt-2 pd py-3 lsp weig2 border-0 brad" id="username" name="username"
+            [(ngModel)]="user.username" #username="ngModel" placeholder="JohnDoe19" required />
+          <p class="small text-danger my-2" *ngIf="username.dirty && username.invalid">
+            Username can't be empty !
+          </p>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label lsp weig1">Password</label>
+          <input type="password" class="form-control mt-2 py-3 pd lsp weig2 border-0 brad" id="password" name="password"
+            [(ngModel)]="user.password" #password="ngModel" placeholder="********" required />
+          <p class="small text-danger my-2" *ngIf="password.dirty && password.invalid">
+            Password can't be empty !
+          </p>
+        </div>
+
+        <button type="submit" class="btn color px-5 lsp mt-5 shadow bg-success" style="margin:auto;display:block"
+          [disabled]="signInForm.pristine || signInForm.invalid">
+          LOGIN
+        </button>
+      </form>
+
+      <div class="alert alert-danger d-flex align-items-center mt-4" role="alert" *ngIf="errorFlag">
+        <i class="material-icons"> warning </i>
+        <div class="ms-2">Login credentials are invalid</div>
+      </div>
+    </div>
+  </div>
+</div>

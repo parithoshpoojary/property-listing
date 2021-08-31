@@ -1,0 +1,250 @@
+<!-- Hero box with filtering form -->
+<div class="container-fluid container-lg">
+    <div id="hero-box" class="row"> 
+        <div class="col-lg-6">
+            <h1 class="heading-big mt-5">
+                Find Your Perfect<br />
+                Future Home
+            </h1>
+            <p class="cont-med mt-4">PL can help you find a home of the, apartment
+                for rent, sell and buy that you'll love. As with any new technology, building designers experiment and
+                learn from each other in the pursuit of new solutions, can help you easily find a home, apartment for
+                rent, sell and buy that you'll love.
+            </p>
+        </div>
+        <div class="col-lg-6">
+            <img src="../../assets/heroimg.png" class="img-fluid inline-block" />
+            <img src="../../assets/BoxDesign.png" class="img-fluid inline-block" style="width: 180px; height: 90px" />
+        </div>
+    </div>
+</div>
+
+
+<div id="hero-box" class="col-8 px-4 py-5 mt-5 border-0 position-relative box1" style="height: 555px; width: auto;">
+    <div class="d-flex justify-content-between align-items">
+        <div class="container ms-5">
+            <h1 class=" h1 mt-5">
+                Find Your Perfect<br />
+                Future Home
+            </h1>
+            <p class="h2 mt-4" style="width: 450px; text-align: justify;">PL can help you find a home of the, apartment
+                for rent, sell and buy that you'll love. As with any new technology, building designers experiment and
+                learn from each other in the pursuit of new solutions, can help you easily find a home, apartment for
+                rent, sell and buy that you'll love. </p>
+        </div>
+        <div class="hero">
+            <img src="../../assets/heroimg.png" class="img-fluid" />
+        </div>
+        <div>
+            <img src="../../assets/BoxDesign.png" class="img-fluid" style="width: 180px; height: 90px" />
+        </div>
+    </div>
+
+    <div class="position-absolute bomb">
+        <div class="btn-group mb-2">
+            <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked />
+            <label class="btn btn-success p-3 brdcnr letdes text-center" for="option1">
+                <span class="me-2"> <img src="../../assets/target.png" class="img-fluid" alt="Buy Logo">
+                </span>BUY
+            </label>
+
+            <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" />
+            <label class="btn btn-success p-3 brdcnr letdes" for="option2"> <span class="me-2"> <img
+                        src="https://img.icons8.com/fluency-systems-filled/48/ffffff/sell-property.png"
+                        class="img-fluid" style="height: 25px; width: 25px;" /></span>RENT</label>
+        </div>
+
+        <div>
+            <form id="filter-form" class="row row-cols-lg-auto border-0 px-4 py-3 dem shadow">
+                <div class="col-12">
+                    <div class="input-group">
+                        <select class="form-select border-0 py-4 px-3 letdes" id="cities">
+                            <option value="{{ location.id }}" *ngFor="let location of locations; let i = index">
+                                {{ location.city }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12">
+
+                    <!-- <label for="category">Category</label> -->
+                    <select class="form-select border-0 py-4 letdes" id="category">
+                        <option value="{{ category.id }}" *ngFor="let category of categories; let i = index">
+                            {{ category.name }}
+                        </option>
+                    </select>
+                </div>
+                <div class="col-12">
+
+                    <!-- <label for="price">Price</label> -->
+                    <select class="form-select border-0 py-4 letdes" id="price">
+                        <option value="0" selected>Price Range</option>
+                        <option value="1">5k-10k</option>
+                        <option value="2">10k-15k</option>
+                        <option value="3">15k-20k</option>
+                        <option value="4">above 20k</option>
+                    </select>
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" class="btn material-icons searchbg shadow-lg py-3 px-3 mt-2">
+                        search
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Hero box end -->
+
+<!-- City Property Listings carousel -->
+<div id="listcar">
+    <div class="px-2 py-2" id="featured-spaces">
+
+        <div class="position-relative">
+            <h2 class="fetmt inline-block">Featured Spaces</h2>
+            <a routerLink="/listings" class="
+            btn btn-secondary inline-block position-absolute end-0 top-0 color shadow-lg py-3 px-3
+          ">Explore More<span><img src="../../assets/rightarrow.png" alt="arrow" class="img-fluid ms-3"
+                        style="height: 20px;"></span></a>
+        </div>
+
+        <div class="row g-5 py-5 position-relative">
+            <div class="col-sm-6 col-lg-3" *ngFor="let property of properties">
+                <div class="card position-relative border-0 shadow" style="border-radius: 15px;">
+                    <img src="../../assets/photoBuilding.png" class="card-img-top p-2" alt="buildings" />
+                    <div class="card-body">
+                        <h5 class="card-title catnamedes">
+                            {{ property.name }}
+                            <span class="badge bg-secondary position-absolute end-0 me-3">{{ property.listFor }}</span>
+                        </h5>
+                        <div class="card-text">
+                            <div class="catnamedes">{{ property.category.name }}</div>
+                            <div class="catadddes mt-3"><span><img src="../../assets/Rounded.png" alt="arrow"
+                                        class="img-fluid me-2" style="height: 20px;"></span>{{ property.address.line1 }}
+                                {{
+                                property.address.line2 }}</div>
+                            <div class="catadddes mt-1" style="margin-left: 30px;">{{ property.address.pincode }}</div>
+                        </div>
+                        <a routerLink="/property" class="btn color1 mt-3">EXPLORE PROPERTY</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- properties carousel end-->
+
+<!-- About Us -->
+<div class="d-flex mt-5 mar">
+    <div class="align-self-start">
+        <img src="../../assets/AboutUs.png" alt="aboutus" class="img-fluid">
+    </div>
+    <div class="ms-5 pt-5 align-self-center">
+        <h2 class="h2des">ABOUT US</h2>
+        <h2 class="des mt-5">Helping People to <br />
+            Find their Home</h2>
+        <p class="mt-3 des1" style="width: 500px; text-align: justify;">PL can help you find a home of the, apartment
+            for rent, sell and buy that you'll love. As with any new technology, building designers experiment and learn
+            from each other in the pursuit of new solutions, can help you easily find a home, apartment for rent, sell
+            and buy that you'll love. </p>
+    </div>
+</div>
+<!-- About Us End -->
+
+<!-- Our Services -->
+<h2 class="text-center mt-5 py-5 des0">OUR SERVICES</h2>
+
+<!-- Buy House Service -->
+<div class="d-flex mt-5">
+    <div class="align-self-start">
+        <img src="../../assets/BuyHouses.png" alt="aboutus" class="img-fluid">
+    </div>
+    <div class="ms-5 pt-5 align-self-center">
+        <!-- <img src="../../assets/Rentourservice.png" alt="Rent" class="img-fluid" style="height: 350px; width: auto;"> -->
+        <h2 class="h2des">BUY HOUSE</h2>
+        <h2 class="des mt-5">Buying your Dream <br />
+            House is made easier.</h2>
+        <p class="mt-3 des1" style="width: 500px; text-align: justify;">PL can help you find a home of the, apartment
+            for rent, sell and buy that you'll love. As with any new technology, building designers experiment and learn
+            from each other in the pursuit of new solutions, can help you easily find a home, apartment for rent, sell
+            and buy that you'll love. </p>
+        <div>
+            <button class="btn color px-5 py-3 lsp mt-5 shadow-lg">EXPORE MORE<span class="ms-4"> <img
+                        src="../../assets/rightarrow.png" alt="arrow" class="img-fluid"
+                        style="height: 25px;"></span></button>
+        </div>
+    </div>
+</div>
+
+<!-- Rent House Service -->
+<div class="d-flex mar">
+    <div class="pt-5 align-self-center">
+        <!-- <img src="../../assets/buyourservice.png" alt="Buy" class="img-fluid" style="height: 200px; width: auto;"> -->
+        <h2 class="h2des">RENT HOUSE</h2>
+        <h2 class="des mt-5">Renting your Dream <br />
+            Home is made easier.</h2>
+        <p class="mt-3 des1" style="width: 500px; text-align: justify;">PL can help you find a home of the, apartment
+            for rent, sell and buy that you'll love. As with any new technology, building designers experiment and learn
+            from each other in the pursuit of new solutions, can help you easily find a home, apartment for rent, sell
+            and buy that you'll love. </p>
+        <div>
+            <button class="btn color px-5 py-3 lsp mt-5 shadow-lg">EXPORE MORE<span class="ms-4"> <img
+                        src="../../assets/rightarrow.png" alt="arrow" class="img-fluid"
+                        style="height: 25px;"></span></button>
+        </div>
+    </div>
+    <div class="align-self-end">
+        <div class="position-relative">
+            <div class="position-absolute bottom-0 start-50 translate-middle-x"></div>
+        </div>
+        <img src="../../assets/RentHouse.png" alt="aboutus" class="img-fluid">
+    </div>
+
+</div>
+<!-- Our Services End -->
+
+<!-- Reviews -->
+<div class="m_container m_px-4 m_py-5" id="m_featured-spaces">
+    <h2 class="m_pb-2">Customer Reviews</h2>
+
+    <div class="mrow g-4 py-5">
+        <div class="col-lg-4">
+            <div class="card p-3 shadow border-0">
+                <img class="rimg" src="../../assets/man.png">
+                <div class="card-body">
+                    <h5 class="card-title">Mohammed Arif</h5>
+                    <img src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/Resources%20-%20Main/Images/star_rating.png"
+                        style="width:auto;height:300;margin-bottom:5px">
+                    <p class="card-text">This website is exceptional because it allowed me to find my dream home with
+                        all the requirements. A must visit for anyone looking for a new home!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card crd p-3 shadow border-0">
+                <img class="rimg" src="../../assets/man.png">
+                <div class="card-body">
+                    <h5 class="card-title">Rithvik B</h5>
+                    <img src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/Resources%20-%20Main/Images/star_rating.png"
+                        style="width:auto;height:300;margin-bottom:5px">
+                    <p class="card-text">This website is exceptional because it allowed me to find my dream home with
+                        all the requirements. A must visit for anyone looking for a new home!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card p-3 shadow border-0">
+                <img class="rimg" src="../../assets/man.png">
+                <div class="card-body cby">
+                    <h5 class="card-title">Tejal Guttal</h5>
+                    <img src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/Resources%20-%20Main/Images/star_rating.png"
+                        style="width:auto;height:300;margin-bottom:5px">
+                    <p class="card-text">This website is exceptional because it allowed me to find my dream home with
+                        all the requirements. A must visit for anyone looking for a new home!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Reviews End -->

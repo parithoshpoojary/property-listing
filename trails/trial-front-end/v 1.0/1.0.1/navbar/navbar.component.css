@@ -1,0 +1,41 @@
+/*  */
+.nav-pad {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 35px;
+}
+ul li {
+    margin: auto;
+}
+.link-style {
+    text-decoration: none;
+    color: #999999;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.btn-green {
+    background-color: #016450;
+    font-family: "Segoe UI";
+    font-weight: 700;
+    src: local("Segoe UI Bold");
+    letter-spacing: 1.5px;
+    color: #ffffff;
+}
+
+.btn-white {
+    background-color: #ffffff;
+    font-family: "Segoe UI";
+    font-weight: 700;
+    src: local("Segoe UI Bold");
+    letter-spacing: 1.5px;
+    color: #016450;
+}
+
+@media (min-width:768px) {
+    .nav-pad {
+        padding-left: 10vw;
+        padding-right: 10vw;
+        padding-top: 35px;
+    }
+}
