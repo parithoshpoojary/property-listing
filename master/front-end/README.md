@@ -35,7 +35,7 @@ This folder includes all of the frontend code that the web application requires.
   
 14. **footer:** includes the footer component *(HTML, CSS, Typescript)*. This component contains the `Link` required by the applications and `Website description`.
 
-## Development Server (Angular)
+## Development Server
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
 
