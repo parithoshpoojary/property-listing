@@ -1,4 +1,9 @@
-### This is the folder where the back-end part of the project's trials is be stored.
+## Property Listing - Backend
+This folder includes all of the backend code that the web application requires. This was accomplished with the help of `Spring Boot`, `Spring JPA` and `Postman` for 
+testing the webservice api.
 
-1. user-auth: A Spring Boot project that contains the user authentication service. 
-2. log-and-cat: A Spring Boot project that contains the all the components required by the home page. 
+#### This folder contains the following:
+1. **pom.xml** - It includes all of the dependencies necessary for the web application to work properly. 
+2. **applications.property** - It includes the connector for MySQL.
+3. **src** - This source folder includes all the packages and java classes that build up the backend webservice.
+ 
