@@ -5,12 +5,6 @@
 
 ## Getting Started
 
-### Minimum Requirements
-
-* Angular and Node.js
-* MySQL and Spring (running in background)
-
-
 ### Building the Application
 * **Clone the repo:** `git clone https://github.com/parithoshpoojary/property-listing.git`
 * **Change your dir to:** `cd property-listing/`
