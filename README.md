@@ -5,21 +5,25 @@
 
 ## Getting Started
 
-### Building the Application
 * **Clone the repo:** `git clone https://github.com/parithoshpoojary/property-listing.git`
 * **Change your dir to:** `cd property-listing/`
 
 ###### This will get a copy of the project installed locally. To install all of its dependencies and start the application, follow the instructions below.
 
+Make sure you have the [Angular CLI](https://angular.io/cli) installed globally. I used `npm` package manager to manage all the dependencies. To install npm [click here](https://nodejs.org/en/download/).
+
 **Change your dir to:** `cd property-listing/master/frontend`
 
+After installing the npm, run `npm install` on the commnad prompt to resolve all dependencies (might take a minute or so).
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+### Building the Project
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 #### For more information on building and running the application, visit [Angular - Serve](https://angular.io/cli/serve), [Angular - Build](https://angular.io/cli/build).
 
-## Features 
+## Functionality overview 
 
 **The following are the `functionalities` made available to the end user:**
 * Signup and Login into the website.
