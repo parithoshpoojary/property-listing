@@ -1,11 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 import { Location } from '../model/location';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocationService {
+  private apiUrl = environment.apiUrl;
 
   locations: Location[];
 
@@ -14,7 +16,7 @@ export class LocationService {
   }
 
   setLocations() {
-    this.http.get<Location[]>("http://localhost:8080/cities").subscribe((data: Location[]) => { this.locations = data });
+    this.http.get<Location[]>(`${this.apiUrl}/cities`).subscribe((data: Location[]) => { this.locations = data });
   }
 
 

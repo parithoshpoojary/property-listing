@@ -1,11 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 import { Category } from '../model/category';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
+  private apiUrl = environment.apiUrl;
 
   categories: Category[];
 
@@ -14,7 +16,7 @@ export class CategoryService {
   }
 
   setCategories() {
-    this.http.get<Category[]>("http://localhost:8080/categories").subscribe((data: Category[]) => {this.categories = data});
+    this.http.get<Category[]>(`${this.apiUrl}/categories`).subscribe((data: Category[]) => {this.categories = data});
   }
 
 }

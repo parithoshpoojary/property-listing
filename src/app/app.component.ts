@@ -9,7 +9,7 @@ import { UserService } from './services/user.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'property-listing';
+  title = 'marco';
   
   constructor(public locationService: LocationService,
     public categoryService: CategoryService,

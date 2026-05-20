@@ -16,6 +16,7 @@ export class ListingsComponent implements OnInit {
 
   propName: string = '';
   stars: string[]=[];
+  featuredProperty?: Property;
 
   constructor(public locationService: LocationService,
     public categoryService: CategoryService,
@@ -41,11 +42,25 @@ export class ListingsComponent implements OnInit {
     this.dataSharing.signupFlag = false;
     this.dataSharing.wishlistFlag = false;
 
-    this.propService.properties =[];
-    this.propService.getPropertiesByFiltering(this.dataSharing.formData).subscribe((data: Property[]) => { this.propService.properties = data });
+    this.propService.properties = [];
+    const formData = this.dataSharing.formData || {};
+    const hasFilter = Object.keys(formData).some(key => formData[key] !== undefined && formData[key] !== null && formData[key] !== '');
 
-    for(let i=0; i<5;i++)
-      {this.stars[i]="fa fa-star checked";}
+    if (hasFilter) {
+      this.propService.getPropertiesByFiltering(formData).subscribe((data: Property[]) => {
+        this.propService.properties = data;
+        this.featuredProperty = data.length ? data[0] : undefined;
+      });
+    } else {
+      this.propService.getPropertiesAll().subscribe((data: Property[]) => {
+        this.propService.properties = data;
+        this.featuredProperty = data.length ? data[0] : undefined;
+      });
+    }
+
+    for (let i = 0; i < 5; i++) {
+      this.stars[i] = "fa fa-star checked";
+    }
 
   }
 }

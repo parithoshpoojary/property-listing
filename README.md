@@ -1,6 +1,6 @@
-# <img src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/Resources%20-%20Main/Images/Logo.png" width="45" height="40" align="left"> Property Listing
+# <img src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/Resources%20-%20Main/Images/Logo.png" width="45" height="40" align="left"> Marco
 
-`PL (Property-Listing)` is an online web application that serves as a single platform for property buyers and sellers in India to discover properties of interest.
+`Marco` is an online web application that serves as a single platform for property buyers and sellers in India to discover properties of interest.
 
 #### For the service that runs the backend of the application check out [Property-Listing-Backend](https://github.com/parithoshpoojary/property-listing-api).
 
@@ -38,7 +38,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 - Removing and viewing properties in the wishlist and cart.
 - Placing the order.
 
-## Property Listing - UI
+## Marco - UI
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/User%20Interface%20-%20Design/UI%20Desgins/GIT%20UI.png">

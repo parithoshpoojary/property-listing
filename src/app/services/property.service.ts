@@ -1,11 +1,13 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 import { Property } from '../model/property';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PropertyService {
+  private apiUrl = environment.apiUrl;
 
   properties: Property[];
 
@@ -16,27 +18,27 @@ export class PropertyService {
   }
 
   getPropertyById(id: number) {
-    return this.http.get<any>("http://localhost:8080/property/" + id);
+    return this.http.get<any>(`${this.apiUrl}/property/${id}`);
   }
 
   getPropertiesAll() {
-    return this.http.get<any[]>("http://localhost:8080/propertyall/");
+    return this.http.get<any[]>(`${this.apiUrl}/propertyall/`);
   }
 
   getPropertiesByLocation(locationId: number) {
-    return this.http.get<any[]>("http://localhost:8080/propertybylocation/" + locationId);
+    return this.http.get<any[]>(`${this.apiUrl}/propertybylocation/${locationId}`);
   }
 
   getPropertiesByCategory(categoryId: number) {
-    return this.http.get<any[]>("http://localhost:8080/propertybycategory/" + categoryId);
+    return this.http.get<any[]>(`${this.apiUrl}/propertybycategory/${categoryId}`);
   }
 
   getPropertiesByName(name: string) {
-    return this.http.get<any[]>("http://localhost:8080/propertybyname/" + name);
+    return this.http.get<any[]>(`${this.apiUrl}/propertybyname/${name}`);
   }
 
   getPropertiesByListFor(listFor: string) {
-    return this.http.get<any[]>("http://localhost:8080/propertybylisttype/" + listFor);
+    return this.http.get<any[]>(`${this.apiUrl}/propertybylisttype/${listFor}`);
   }
 
   getPropertiesByFiltering(formData: any) {
@@ -51,11 +53,11 @@ export class PropertyService {
                 .set("listFor", listFor)
                 .set("sortBy", sortBy);
 
-    return this.http.get<any[]>("http://localhost:8080/propertybyfiltering", {params} );
+    return this.http.get<any[]>(`${this.apiUrl}/propertybyfiltering`, {params} );
   }
 
   getPropertyReviews(propId: number) {
-    return this.http.get<any[]>("http://localhost:8080/propertyreview/" + propId);
+    return this.http.get<any[]>(`${this.apiUrl}/propertyreview/${propId}`);
   }
 
 }
