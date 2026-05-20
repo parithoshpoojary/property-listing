@@ -1,33 +1,161 @@
-/*  */
-.link-style {
-  text-decoration: none;
-  color: #999999;
-  letter-spacing: 3px;
-  font-weight: 700;
+.navbar-shell {
+  font-family: "Segoe UI", sans-serif;
 }
 
-.btn-green {
-  background-color: #016450;
-  font-family: "Segoe UI";
-  font-weight: 700;
-  src: local("Segoe UI Bold");
-  letter-spacing: 1.5px;
+.topbar {
+  background-color: #061424;
   color: #ffffff;
+  font-size: 0.92rem;
+  padding: 0.7rem 0;
 }
 
-.btn-white {
+.topbar-left,
+.topbar-right {
+  align-items: center;
+}
+
+.topbar-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.topbar-social:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+.topbar-social-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.topbar-contact {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navbar-main {
   background-color: #ffffff;
-  font-family: "Segoe UI";
-  font-weight: 700;
-  src: local("Segoe UI Bold");
-  letter-spacing: 1.5px;
-  color: #016450;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.05);
+  padding: 1rem 0;
 }
 
-@media (min-width: 768px) {
-  .nav-pad {
-    padding-left: 7vw;
-    padding-right: 7vw;
-    padding-top: 35px;
+.navbar-main .navbar-nav {
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.navbar-main .nav-item {
+  margin: 0 !important;
+}
+
+.nav-link.link-style {
+  color: #1f2937;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  text-transform: none;
+  padding: 0.55rem 0.3rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-link.link-style:hover,
+.nav-link.link-style.active {
+  color: #b71c21;
+  border-bottom-color: #b71c21;
+}
+
+.brand-logo {
+  height: 42px;
+  width: auto;
+  margin-right: 0.85rem;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-size: 1.07rem;
+  font-weight: 700;
+  color: #0f2643;
+}
+
+.brand-subtitle {
+  font-size: 0.82rem;
+  color: #b71c21;
+  letter-spacing: 0.5px;
+  margin-top: 0.1rem;
+}
+
+.link-style {
+  color: #1f2937;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.link-style:hover,
+.link-style.active {
+  color: #b71c21;
+}
+
+.btn-sell {
+  background-color: #b71c21;
+  color: #ffffff;
+  border: none;
+  font-weight: 700;
+}
+
+.btn-sell:hover {
+  background-color: #8f1418;
+}
+
+@media (max-width: 991px) {
+  .topbar {
+    display: none !important;
+  }
+  .navbar-main {
+    padding: 0.75rem 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-main .container-fluid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .navbar-main > .container-fluid > .d-flex {
+    width: 100%;
+  }
+
+  .navbar-main .navbar-collapse {
+    width: 100%;
+  }
+
+  .navbar-main .navbar-collapse {
+    display: flex;
+    justify-content: center;
+  }
+
+  .navbar-main .navbar-nav {
+    justify-content: center;
+    margin: 0;
+  }
+
+  .navbar-main .navbar-nav .nav-item {
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }

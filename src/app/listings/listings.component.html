@@ -21,10 +21,15 @@
             </form>
         </div>
     </div>
+<div *ngIf="errorMessage" class="container mt-3">
+    <div class="alert alert-warning text-center" role="alert">
+        {{ errorMessage }}
+    </div>
+</div>
 </div>
 
 <!-- HeroBox (Featured properties) Start -->
-<div id="feat-box" class="container my-5">
+<div *ngIf="featuredProperty" id="feat-box" class="container my-5">
     <div class="row g-3 justify-content-start mb-5">
         <div id="feat-head" class="col-8 col-md-6 col-lg-5">
             <p class="heading-big pt-3 px-5">FEATURED</p>
@@ -35,7 +40,7 @@
             <div class="card border-0 shadow-lg mb-3">
                 <div class="row justify-content-between border-0 g-3 me-2">
                     <div class="col-md-4 align-self-center">
-                        <img src="{{propService.properties[0].images[0].imageurl}}"
+                        <img src="{{featuredProperty.images[0]?.imageurl}}"
                             class="img-fluid rounded-start ms-2 h-100" alt="img">
                     </div>
                     <div class="col-md-8">
@@ -43,15 +48,15 @@
                             <div class="row justify-content-between">
 
                                 <div class="col-8">
-                                    <a class="prop-name" routerLink="/property/{{propService.properties[0].id}}">
-                                        <h5 class="card-title">{{propService.properties[0].name}}</h5>
+                                    <a class="prop-name" routerLink="/property/{{featuredProperty.id}}">
+                                        <h5 class="card-title">{{featuredProperty.name}}</h5>
                                     </a>
                                     <h6 class="mt-3" style="font-size: 14px;"><span><img src="../../assets/Rounded.png"
                                                 alt="arrow"
-                                                class="img-fluid"></span>{{propService.properties[0].address.line1 + " "
-                                        + propService.properties[0].address.line2}}
+                                                class="img-fluid"></span>{{featuredProperty.address.line1 + " "
+                                        + featuredProperty.address.line2}}
                                     </h6>
-                                    <p class="mt-4 card-price">{{propService.properties[0].price}}</p>
+                                    <p class="mt-4 card-price">{{featuredProperty.price}}</p>
 
                                     <div class="row justify-content-between mt-5">
                                         <div class="col-6 aminities">
@@ -140,8 +145,8 @@
                 <img src="{{property.images[0].imageurl}}" class="card-img-top px-2 pt-2" alt="buildingimg" />
                 <div class="card-body d-flex justify-content-between">
                     <div class="px-2 pt-1">
-                        <a class="cardAminity" routerLink="/property/{{propService.properties[0].id}}">
-                            <h5 class="card-title">{{propService.properties[0].name}}</h5>
+                        <a class="cardAminity" routerLink="/property/{{property.id}}">
+                            <h5 class="card-title">{{property.name}}</h5>
                         </a>
                         <h6 class="mt-3 featuredes" style="font-size: 14px;"><span><img src="../../assets/Rounded.png"
                                     alt="arrow" class="img-fluid me-2"

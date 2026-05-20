@@ -16,6 +16,8 @@ export class ListingsComponent implements OnInit {
 
   propName: string = '';
   stars: string[]=[];
+  featuredProperty?: Property;
+  errorMessage: string = '';
 
   constructor(public locationService: LocationService,
     public categoryService: CategoryService,
@@ -41,11 +43,37 @@ export class ListingsComponent implements OnInit {
     this.dataSharing.signupFlag = false;
     this.dataSharing.wishlistFlag = false;
 
-    this.propService.properties =[];
-    this.propService.getPropertiesByFiltering(this.dataSharing.formData).subscribe((data: Property[]) => { this.propService.properties = data });
+    this.propService.properties = [];
+    const formData = this.dataSharing.formData || {};
+    const hasFilter = Object.keys(formData).some(key => formData[key] !== undefined && formData[key] !== null && formData[key] !== '');
 
-    for(let i=0; i<5;i++)
-      {this.stars[i]="fa fa-star checked";}
+    if (hasFilter) {
+      this.propService.getPropertiesByFiltering(formData).subscribe((data: Property[]) => {
+        this.propService.properties = data;
+        this.featuredProperty = data.length ? data[0] : undefined;
+        this.errorMessage = '';
+      }, (error) => {
+        console.error('Property filtering error', error);
+        this.propService.properties = [];
+        this.featuredProperty = undefined;
+        this.errorMessage = 'Unable to load properties. Please check that the backend API is running and reachable.';
+      });
+    } else {
+      this.propService.getPropertiesAll().subscribe((data: Property[]) => {
+        this.propService.properties = data;
+        this.featuredProperty = data.length ? data[0] : undefined;
+        this.errorMessage = '';
+      }, (error) => {
+        console.error('Property load error', error);
+        this.propService.properties = [];
+        this.featuredProperty = undefined;
+        this.errorMessage = 'Unable to load properties. Please check that the backend API is running and reachable.';
+      });
+    }
+
+    for (let i = 0; i < 5; i++) {
+      this.stars[i] = "fa fa-star checked";
+    }
 
   }
 }

@@ -1,69 +1,71 @@
-<div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light mt-4">
-        <div class="container-fluid">
+<div class="navbar-shell">
+  <div class="topbar d-none d-lg-flex justify-content-between align-items-center px-4">
+    <div class="topbar-left d-flex align-items-center gap-3">
+      <a class="topbar-social" href="https://www.facebook.com/armasgroupnyc" target="_blank" rel="noreferrer">
+        <img src="../../assets/facebook.svg" alt="Facebook" class="topbar-social-icon" />
+      </a>
+      <a class="topbar-social" href="https://www.instagram.com/armasgroupnyc/" target="_blank" rel="noreferrer">
+        <img src="../../assets/instagram.svg" alt="Instagram" class="topbar-social-icon" />
+      </a>
+      <a class="topbar-social" href="http://wa.me/19292730688" target="_blank" rel="noreferrer">
+        <img src="../../assets/whatsapp.svg" alt="WhatsApp" class="topbar-social-icon" />
+      </a>
+    </div>
+    <div class="topbar-right d-flex align-items-center gap-4">
+      <a class="topbar-contact" href="tel:+09653821119">09653821119</a>
+      <span class="topbar-contact">Digos City, Davao, 8002</span>
+      <a class="topbar-contact" href="mailto:dimalantamarco@gmail.com">dimalantamarco@gmail.com</a>
+    </div>
+  </div>
 
-            <a class="navbar-brand" routerLink=""><img src="../../assets/Logo.png" class="img-fluid w-75"
-                    *ngIf="dataSharingService.homeFlag || dataSharingService.bookingsFlag || dataSharingService.listingFlag || dataSharingService.propertyFlag || dataSharingService.signinFlag || dataSharingService.signupFlag || dataSharingService.wishlistFlag || dataSharingService.pagenotfoundFlag" /></a>
+  <nav class="navbar navbar-expand-lg navbar-light navbar-main">
+    <div class="container-fluid px-4">
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <a class="navbar-brand d-flex align-items-center" routerLink="/home/1">
+          <img src="../../assets/Logo.png" alt="Marco logo" class="brand-logo" />
+          <div class="brand-text">
+            <span class="brand-title">MARCO KNOWS DAVAO</span>
+            <span class="brand-subtitle">Your Real Estate Team</span>
+          </div>
+        </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown ms-3 d-none d-lg-block"
-                        *ngIf="dataSharingService.homeFlag || dataSharingService.listingFlag">
-                        <a class="nav-link link-style dropdown-toggle border-0 label-style" href="#" id="navbarDropdown"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            LOCATION
-                        </a>
-                        <ul class="dropdown-menu mx-auto" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" *ngFor="let location of locationService.locations"
-                                    href="home/{{location.id}}">{{location.city}}</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item mx-auto px-4"
-                        *ngIf="dataSharingService.bookingsFlag || dataSharingService.listingFlag || dataSharingService.propertyFlag || dataSharingService.signinFlag || dataSharingService.signupFlag || dataSharingService.wishlistFlag">
-                        <a class="nav-link link-style" aria-current="page" routerLink="/listings/buy">BUY</a>
-                    </li>
-                    <hr>
-                    <li class="nav-item mx-auto px-4"
-                        *ngIf="dataSharingService.bookingsFlag || dataSharingService.listingFlag || dataSharingService.propertyFlag || dataSharingService.signinFlag || dataSharingService.signupFlag || dataSharingService.wishlistFlag">
-                        <a class="nav-link link-style" aria-current="page" routerLink="/listings/rent">RENT</a>
-                    </li>
-                    <hr>
-                </ul>
+        <div class="d-flex align-items-center">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                <ul class="navbar-nav" *ngIf="auth.currentUser.userId==0">
-                    <button type="button" class="btn btn-white mx-5 mx-lg-3 my-2 my-lg-0 px-3 shadow-lg"
-                        aria-current="page"
-                        *ngIf="dataSharingService.homeFlag || dataSharingService.bookingsFlag || dataSharingService.listingFlag || dataSharingService.propertyFlag || dataSharingService.signinFlag || dataSharingService.signupFlag || dataSharingService.wishlistFlag || dataSharingService.pagenotfoundFlag"
-                        routerLink="/signup">SIGNUP</button>
-                    <button type="button" class="btn btn-green mx-5 mx-lg-3 my-2 my-lg-0 px-3 shadow-lg"
-                        aria-current="page"
-                        *ngIf="dataSharingService.homeFlag || dataSharingService.bookingsFlag || dataSharingService.listingFlag || dataSharingService.propertyFlag || dataSharingService.signinFlag || dataSharingService.signupFlag || dataSharingService.wishlistFlag || dataSharingService.pagenotfoundFlag"
-                        routerLink="/signin">LOGIN</button>
-                </ul>
-
-                <ul class="navbar-nav" *ngIf="auth.currentUser.userId!=0">
-                    <button type="button" class="btn btn-green mx-5 mx-lg-3 my-2 my-lg-0 px-3 shadow-lg"
-                        aria-current="page" routerLink="/wishlist">WISHLIST</button>
-                    <button type="button" class="btn btn-green mx-5 mx-lg-3 my-2 my-lg-0 px-3 shadow-lg"
-                        aria-current="page" routerLink="/bookings">BOOKINGS</button>
-                    <button type="button" class="btn btn-white mx-5 mx-lg-3 my-2 my-lg-0 px-3 shadow-lg"
-                        aria-current="page" (click)="auth.signOut()" routerLink="">LOGOUT</button>
-                </ul>
-
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-lg-none">
-                    <hr>
-                    <li class="nav-item mx-auto my-3">
-                        <div *ngFor="let location of locationService.locations" class="d-inline">
-                            <a class="dropdown-item d-inline" href="home/{{location.id}}">{{location.city}}</a> |
-                        </div>
-                    </li>
-                </ul>
-            </div>
+          <a class="btn btn-sell ms-3 d-none d-lg-inline" routerLink="/listings">SELL WITH US</a>
         </div>
-    </nav>
+      </div>
+
+      <div class="collapse navbar-collapse mt-3" id="navbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-lg-center ms-3">
+          <li class="nav-item mx-2">
+            <a class="nav-link link-style" routerLink="/home/1" routerLinkActive="active">Home</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link link-style" routerLink="/listings" routerLinkActive="active">Services</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link link-style" routerLink="/listings" routerLinkActive="active">Listings</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link link-style" routerLink="/listings" routerLinkActive="active">About us</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link link-style" routerLink="/blog-archives" routerLinkActive="active">Blog Archives</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link link-style" routerLink="/listings" routerLinkActive="active">Contact us</a>
+          </li>
+        </ul>
+
+        <div class="d-flex d-lg-none align-items-center w-100 px-3">
+          <a class="btn btn-sell w-100 my-2" routerLink="/listings">SELL WITH US</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeComponent } from '../home/home.component';
+import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { DataSharingService } from '../services/data-sharing.service';
 import { LocationService } from '../services/location.service';
@@ -11,14 +11,24 @@ import { LocationService } from '../services/location.service';
 })
 export class NavbarComponent implements OnInit {
   
-  locations: Location[];
+  locations: any[];
   
-  constructor(public locationService: LocationService, public dataSharingService: DataSharingService, public auth: AuthService) { 
+  constructor(
+    public locationService: LocationService,
+    public dataSharingService: DataSharingService,
+    public auth: AuthService,
+    private router: Router
+  ) { 
     this.locations = [];
   }
 
   ngOnInit(): void {
-   
+    this.locations = this.locationService.locations || [];
+  }
+
+  signOut(): void {
+    this.auth.signOut();
+    this.router.navigate(['/home', 1]);
   }
 
 }

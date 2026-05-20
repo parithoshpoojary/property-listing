@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  private apiUrl = environment.apiUrl;
 
   reviews: string[][];
 
@@ -13,7 +15,7 @@ export class UserService {
   }
 
   setWebsiteReviews() {
-    this.http.get<string[][]>("http://localhost:8080/websitereviews").subscribe((data: string[][]) => {this.reviews = data});
+    this.http.get<string[][]>(`${this.apiUrl}/websitereviews`).subscribe((data: string[][]) => {this.reviews = data});
   }
   
 }

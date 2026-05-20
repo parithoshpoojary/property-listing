@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "property-listing": {
+    "marco": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/property-listing",
+            "outputPath": "dist/marco",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "property-listing:build:production"
+              "browserTarget": "marco:build:production"
             },
             "development": {
-              "browserTarget": "property-listing:build:development"
+              "browserTarget": "marco:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "property-listing:build"
+            "browserTarget": "marco:build"
           }
         },
         "test": {
@@ -103,5 +103,8 @@
       }
     }
   },
-  "defaultProject": "property-listing"
+  "defaultProject": "marco",
+  "cli": {
+    "analytics": false
+  }
 }
