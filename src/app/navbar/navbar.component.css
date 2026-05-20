@@ -48,6 +48,31 @@
   padding: 1rem 0;
 }
 
+.navbar-main .navbar-nav {
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.navbar-main .nav-item {
+  margin: 0 !important;
+}
+
+.nav-link.link-style {
+  color: #1f2937;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  text-transform: none;
+  padding: 0.55rem 0.3rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-link.link-style:hover,
+.nav-link.link-style.active {
+  color: #b71c21;
+  border-bottom-color: #b71c21;
+}
+
 .brand-logo {
   height: 42px;
   width: auto;
@@ -101,5 +126,36 @@
   }
   .navbar-main {
     padding: 0.75rem 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-main .container-fluid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .navbar-main > .container-fluid > .d-flex {
+    width: 100%;
+  }
+
+  .navbar-main .navbar-collapse {
+    width: 100%;
+  }
+
+  .navbar-main .navbar-collapse {
+    display: flex;
+    justify-content: center;
+  }
+
+  .navbar-main .navbar-nav {
+    justify-content: center;
+    margin: 0;
+  }
+
+  .navbar-main .navbar-nav .nav-item {
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }

@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "name": "Sample Villa",
+    "price": 125000,
+    "pDen": "Spacious",
+    "description": "A beautiful sample villa used as fallback data.",
+    "avgRating": 4,
+    "address": { "id": 1, "line1": "12 Sample St", "line2": "Sample Town", "landmark": "Near Park", "pincode": 12345 },
+    "category": { "id": 1, "name": "Villa" },
+    "locationId": 1,
+    "listFor": "buy",
+    "images": [ { "id": 1, "imageurl": "assets/newimglisting/sample1.jpg" } ]
+  },
+  {
+    "id": 2,
+    "name": "Demo Apartment",
+    "price": 65000,
+    "pDen": "Modern",
+    "description": "A demo apartment included in the fallback dataset.",
+    "avgRating": 5,
+    "address": { "id": 2, "line1": "34 Demo Ave", "line2": "Demo City", "landmark": "Opposite Mall", "pincode": 54321 },
+    "category": { "id": 2, "name": "Apartment" },
+    "locationId": 2,
+    "listFor": "rent",
+    "images": [ { "id": 2, "imageurl": "assets/newimglisting/sample2.jpg" } ]
+  }
+]

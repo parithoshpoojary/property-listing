@@ -20,22 +20,28 @@
 
   <nav class="navbar navbar-expand-lg navbar-light navbar-main">
     <div class="container-fluid px-4">
-      <a class="navbar-brand d-flex align-items-center" routerLink="/home/1">
-        <img src="../../assets/Logo.png" alt="Marco logo" class="brand-logo" />
-        <div class="brand-text">
-          <span class="brand-title">MARCO KNOWS DAVAO</span>
-          <span class="brand-subtitle">Your Real Estate Team</span>
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <a class="navbar-brand d-flex align-items-center" routerLink="/home/1">
+          <img src="../../assets/Logo.png" alt="Marco logo" class="brand-logo" />
+          <div class="brand-text">
+            <span class="brand-title">MARCO KNOWS DAVAO</span>
+            <span class="brand-subtitle">Your Real Estate Team</span>
+          </div>
+        </a>
+
+        <div class="d-flex align-items-center">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <a class="btn btn-sell ms-3 d-none d-lg-inline" routerLink="/listings">SELL WITH US</a>
         </div>
-      </a>
+      </div>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarContent">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+      <div class="collapse navbar-collapse mt-3" id="navbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-lg-center ms-3">
           <li class="nav-item mx-2">
             <a class="nav-link link-style" routerLink="/home/1" routerLinkActive="active">Home</a>
           </li>
@@ -49,12 +55,15 @@
             <a class="nav-link link-style" routerLink="/listings" routerLinkActive="active">About us</a>
           </li>
           <li class="nav-item mx-2">
+            <a class="nav-link link-style" routerLink="/blog-archives" routerLinkActive="active">Blog Archives</a>
+          </li>
+          <li class="nav-item mx-2">
             <a class="nav-link link-style" routerLink="/listings" routerLinkActive="active">Contact us</a>
           </li>
         </ul>
 
-        <div class="d-flex align-items-center flex-wrap">
-          <a class="btn btn-sell mx-2 my-2 px-4" routerLink="/listings">SELL WITH US</a>
+        <div class="d-flex d-lg-none align-items-center w-100 px-3">
+          <a class="btn btn-sell w-100 my-2" routerLink="/listings">SELL WITH US</a>
         </div>
       </div>
     </div>

@@ -1,28 +1,95 @@
+<!-- Animated Hero Section with Slideshow -->
 <section class="hero-panel">
-  <div class="hero-background">
-    <img src="../../assets/heroimg.png" alt="Dream home background" class="hero-bg" />
-    <div class="hero-overlay"></div>
-  </div>
-  <div class="hero-inner container">
-    <div class="hero-copy">
-      <span class="hero-eyebrow">WELCOME TO MARCO GROUP KNOWS DAVAO</span>
-      <h1>Find Your Dream Home<br />in Davao city</h1>
-      <p class="hero-text">Discover premium properties across DVO tailored to your lifestyle. We guide you toward smart investments and long-term value.</p>
-      <div class="hero-actions">
-        <a class="btn btn-hero-primary" routerLink="/listings">CONTACT OUR TEAM</a>
-        <a class="btn btn-hero-secondary" routerLink="/listings">FIND PROPERTIES</a>
+  <div class="hero-slideshow">
+    <div class="hero-slide" *ngFor="let img of heroImages; let i = index" [class.active]="i === activeHeroIndex">
+      <img [src]="img" alt="NYC Real Estate" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-inner container">
+      <div class="hero-copy animate__animated animate__fadeInUp">
+        <span class="hero-eyebrow">WELCOME TO ARMAS GROUP NYC</span>
+        <h1>Find Your Dream Home<br />in New York</h1>
+        <p class="hero-text">Discover premium properties across NYC tailored to your lifestyle. We guide you toward smart investments and long-term value.</p>
+        <div class="hero-actions">
+          <a class="btn btn-hero-primary" routerLink="/contact">CONTACT OUR TEAM</a>
+          <a class="btn btn-hero-secondary" routerLink="/listings">FIND PROPERTIES</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Home page Properties Dashboard -->
-<div id="dashboard" class="py-4">
-    <div class="container pb-5">
-        <div class="row justify-content-between my-4">
-            <div class="col-12 col-md-6">
-                <h2 class="fsdes inline-block mb-5">FEATURED SPACE</h2>
-            </div>
+<!-- Animated Stats/Feature Boxes -->
+<section class="hero-stats container py-5 animate__animated animate__fadeInUp animate__delay-1s">
+  <div class="stats-grid">
+    <div class="stat-card" *ngFor="let stat of heroStats">
+      <div class="stat-value">{{ stat.value }}</div>
+      <div class="stat-label">{{ stat.label }}</div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Listings Cards -->
+<section class="featured-listings container py-5 animate__animated animate__fadeInUp animate__delay-2s">
+  <div class="section-head text-center mb-4">
+    <span class="eyebrow">FIND RECENTLY ADDED EXCLUSIVE PROPERTY LISTINGS</span>
+    <h2>Featured Properties</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let property of properties | slice:0:3">
+      <div class="property-card">
+        <img [src]="property.imageUrl || 'assets/newimglisting/default.jpg'" alt="Property" class="property-img" />
+        <div class="property-badge" *ngIf="property.type">{{ property.type }}</div>
+        <div class="property-info">
+          <h4>{{ property.title }}</h4>
+          <p>{{ property.location }}</p>
+          <div class="property-meta">
+            <span><i class="fa fa-bed"></i> {{ property.bedrooms }} Beds</span>
+            <span><i class="fa fa-bath"></i> {{ property.bathrooms }} Baths</span>
+            <span><i class="fa fa-expand"></i> {{ property.area }} m²</span>
+          </div>
+          <div class="property-price">{{ property.price | currency:'USD' }}</div>
+          <a class="btn btn-alt mt-2" [routerLink]="['/property', property.id]">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Neighborhood Flip Boxes -->
+<section class="featured-neighborhoods container py-5 animate__animated animate__fadeInUp animate__delay-3s">
+  <div class="section-head text-center mb-4">
+    <span class="eyebrow">DISCOVER PREMIUM PROPERTIES ACROSS</span>
+    <h2>Featured NYC Neighborhoods</h2>
+  </div>
+  <div class="neighborhood-flip-grid">
+    <div class="flip-box" *ngFor="let n of featuredNeighborhoods">
+      <div class="flip-box-inner">
+        <div class="flip-box-front">
+          <div class="flip-title">{{ n.title }}</div>
+        </div>
+        <div class="flip-box-back">
+          <div class="flip-title">United States</div>
+          <div class="flip-desc">{{ n.subtitle }}</div>
+          <a class="btn btn-alt btn-sm mt-2" routerLink="/listings">Explore</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<div class="cta-banner py-5 animate__animated animate__fadeInUp animate__delay-4s">
+  <div class="container cta-inner d-flex flex-column flex-lg-row align-items-center justify-content-between gap-3">
+    <div>
+      <span class="eyebrow">START BROWSING PREMIUM REAL ESTATE LISTINGS NOW</span>
+      <h2>Find homes that match your goals, lifestyle, and long-term investment plans.</h2>
+    </div>
+    <a class="btn btn-hero-primary btn-lg" routerLink="/contact">CONTACT OUR TEAM</a>
+  </div>
+</div>
+
+<!-- ...existing code for dashboard and other sections... -->
             <div class="d-none d-md-block col-md-4 col-lg-3">
                 <a routerLink="/listingsbylocation/{{locationId}}"
                     class="btn btnexp color shadow-lg mx-auto p-3"><span>Explore
@@ -135,6 +202,36 @@
 </div>
 <!-- Our Services End -->
 
+<section class="trust-features container py-5">
+  <div class="section-head text-center mb-4">
+    <span class="eyebrow">BUILDING TRUST ACROSS NEW YORK REAL ESTATE</span>
+    <h2>Our experience makes every transaction stronger</h2>
+  </div>
+  <div class="trust-grid">
+    <article class="trust-card" *ngFor="let item of trustHighlights">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
+      <button class="btn btn-alt btn-sm">Learn more</button>
+    </article>
+  </div>
+</section>
+
+<section class="team-section container py-5">
+  <div class="section-head text-center mb-4">
+    <span class="eyebrow">MEET OUR TEAM</span>
+    <h2>Meet the ARMAS GROUP NYC real estate experts</h2>
+  </div>
+  <div class="team-grid">
+    <article class="team-card" *ngFor="let member of teamMembers">
+      <div class="team-avatar">
+        <img src="../../assets/man.png" alt="{{ member.name }}" />
+      </div>
+      <h3>{{ member.name }}</h3>
+      <p>{{ member.role }}</p>
+    </article>
+  </div>
+</section>
+
 <!-- Reviews -->
 <div class="container mb-5">
     <h2 class="des0 text-center mb-5">REVIEWS</h2>
@@ -147,7 +244,7 @@
                     </div>
                     <div class="col-8">
                         <div class="card-body">
-                            <img src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/Resources%20-%20Main/Images/stars.png"
+                            <img src="assets/newimglisting/stars.png"
                                 alt="stars" class="w-75 mb-3">
                             <!-- <h5 class="card-title">(Rating*)</h5> -->
                             <p class="card-text cont-med">{{review[0].slice(0,72)}}</p>
@@ -169,7 +266,7 @@
                     </div>
                     <div class="col-8">
                         <div class="card-body">
-                            <img src="https://raw.githubusercontent.com/parithoshpoojary/property-listing/resources/Resources%20-%20Main/Images/stars.png"
+                            <img src="assets/newimglisting/stars.png"
                                 alt="stars" class="w-75 mb-3">
                             <!-- <h5 class="card-title">(Rating*)</h5> -->
                             <p class="card-text cont-med">{{review[0].slice(0,72)}}</p>

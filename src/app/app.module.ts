@@ -38,6 +38,8 @@ export const routes: Routes = [
 
   { path: 'listingsbyname/:name', component: ListingNameComponent, },
   
+  { path: 'blog-archives', redirectTo: 'listings', pathMatch: 'full' },
+  
   { path: 'property/:propertyId', component: PropertyComponent, },
   
   { path: 'wishlist/:userId', component: WishlistComponent, },

@@ -17,6 +17,7 @@ export class ListingsComponent implements OnInit {
   propName: string = '';
   stars: string[]=[];
   featuredProperty?: Property;
+  errorMessage: string = '';
 
   constructor(public locationService: LocationService,
     public categoryService: CategoryService,
@@ -50,11 +51,23 @@ export class ListingsComponent implements OnInit {
       this.propService.getPropertiesByFiltering(formData).subscribe((data: Property[]) => {
         this.propService.properties = data;
         this.featuredProperty = data.length ? data[0] : undefined;
+        this.errorMessage = '';
+      }, (error) => {
+        console.error('Property filtering error', error);
+        this.propService.properties = [];
+        this.featuredProperty = undefined;
+        this.errorMessage = 'Unable to load properties. Please check that the backend API is running and reachable.';
       });
     } else {
       this.propService.getPropertiesAll().subscribe((data: Property[]) => {
         this.propService.properties = data;
         this.featuredProperty = data.length ? data[0] : undefined;
+        this.errorMessage = '';
+      }, (error) => {
+        console.error('Property load error', error);
+        this.propService.properties = [];
+        this.featuredProperty = undefined;
+        this.errorMessage = 'Unable to load properties. Please check that the backend API is running and reachable.';
       });
     }
 

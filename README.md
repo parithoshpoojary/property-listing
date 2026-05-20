@@ -76,29 +76,3 @@ To contribute to the repository, follow the below given steps:
 5. Create a new Pull Request.
 
 For more information about Angular, check their [documentation](https://angular.io/docs).
-
-## Quick Deploy Guide
-
- - Install dependencies:
-
-```bash
-npm install
-```
-
-- Build for Vercel (uses the `vercel-build` script in `package.json`):
-
-```bash
-npm run vercel-build
-```
-
-- Deploy to Vercel (interactive the first time; use `--yes` to skip prompts):
-
-```bash
-vercel --prod --yes
-```
-
-Notes:
-- The frontend will try to call the backend API configured in `src/environments/environment.prod.ts` (`apiUrl`). If your backend is not running or the URL is unreachable, the app now falls back to a local mock dataset located at `src/assets/mock-properties.json` so listings still display.
-- To use a real backend, update `src/environments/environment.prod.ts` with your API URL and rebuild before deploying.
-
-# property

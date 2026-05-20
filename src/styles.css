@@ -1,1 +1,295 @@
 /* You can add global styles to this file, and also import other style files */
+
+.btn-alt {
+  color: #0f2643;
+  background-color: #f8f9ff;
+  border: 1px solid rgba(15, 38, 67, 0.12);
+  border-radius: 6px;
+  padding: 0.8rem 1.2rem;
+  font-weight: 700;
+}
+
+.btn-alt:hover {
+  background-color: #e7ecf7;
+}
+
+.hero-stats {
+  margin-top: -6rem;
+  position: relative;
+  z-index: 4;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 18px 45px rgba(5, 10, 20, 0.08);
+}
+
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0f2643;
+}
+
+.stat-label {
+  margin-top: 0.5rem;
+  color: #4f5f7f;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.featured-neighborhoods .section-head h2,
+.cta-banner h2,
+.trust-features .section-head h2,
+.team-section .section-head h2 {
+  font-size: clamp(2rem, 2.5vw, 3rem);
+  line-height: 1.1;
+  margin-top: 1rem;
+  color: #0f2643;
+}
+
+.neighborhood-grid,
+.trust-grid,
+.team-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.neighborhood-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.neighborhood-card,
+.trust-card,
+.team-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 18px 45px rgba(5, 10, 20, 0.08);
+}
+
+.neighborhood-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 260px;
+}
+
+.neighborhood-type {
+  font-size: 0.8rem;
+  color: #b71c21;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.neighborhood-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+  color: #0f2643;
+}
+
+.neighborhood-card p {
+  color: #5b6f8a;
+  margin-bottom: 1.5rem;
+}
+
+.cta-banner {
+  background: linear-gradient(135deg, #0f2643 0%, #0b2b54 100%);
+  color: #ffffff;
+  border-radius: 28px;
+  margin: 0 2rem;
+  padding: 2rem 3rem;
+  box-shadow: 0 26px 60px rgba(4, 11, 31, 0.25);
+}
+
+.cta-inner h2 {
+  margin-bottom: 0;
+  max-width: 640px;
+}
+
+.trust-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.trust-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: #0f2643;
+}
+
+.trust-card p {
+  color: #5b6f8a;
+  line-height: 1.7;
+}
+
+.team-card {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.team-avatar {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.team-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.team-card p {
+  color: #5b6f8a;
+  font-weight: 600;
+}
+
+.section-head {
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-head .eyebrow {
+  color: #b71c21;
+  display: inline-block;
+  letter-spacing: 0.2em;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 991px) {
+  .hero-stats {
+    margin-top: 0;
+  }
+  .stats-grid,
+  .neighborhood-grid,
+  .trust-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  .cta-banner {
+    margin: 0;
+    padding: 2rem 1.25rem;
+  }
+  .cta-inner {
+    text-align: center;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero-inner {
+    padding: 2rem 0;
+  }
+  .stat-card {
+    padding: 1.25rem;
+  }
+  .neighborhood-card,
+  .trust-card,
+  .team-card {
+    padding: 1.5rem;
+  }
+}
+
+.h2des {
+  letter-spacing: 7px;
+  font-size: 16px;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  color: #b71c21;
+}
+
+.fsdes {
+  letter-spacing: 5px;
+  font-size: 45px;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  color: rgba(153, 153, 153, 0.4);
+}
+
+.des0 {
+  margin-top: 70px;
+  color: #0f2643;
+  letter-spacing: 5px;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.label-style {
+  border-radius: 7px;
+  font-family: "Segoe UI";
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+.btnexp {
+  font-family: "Segoe UI";
+  font-weight: 600;
+  background-color: #b71c21;
+  color: #ffffff;
+  border-radius: 4px;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+  padding: 8px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.btnexp:hover {
+  transform: translateY(-2px);
+}
+
+.btn-green {
+  background-color: #016450;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+}
+
+.heading-med {
+  letter-spacing: 5px;
+  font-family: "Segoe UI";
+  font-weight: 700;
+}
+
+.heading-small {
+  font-family: "Segoe UI";
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-size: 18px;
+}
+
+#review-card {
+  max-height: 200px;
+  overflow: hidden;
+}
+
+#review-card:hover {
+  transform: scale(1.1, 1.1);
+  animation-delay: 5s;
+  z-index: 3;
+  cursor: default;
+}
